@@ -1,4 +1,4 @@
-# PokéProbe
+# PokéProbe by Dugon
 ### _W12 Express Group Project_
 
 ## Scorecard 
