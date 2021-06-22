@@ -12,4 +12,5 @@ https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT
 - Begin work on your wiki documentation pages, starting with your Feature List
 
 ## Resources
+- https://pokemon.alexonsager.net/
 - https://github.com/appacademy-starters/express-project-planning-example/wiki
