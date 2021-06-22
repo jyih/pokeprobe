@@ -6,9 +6,9 @@ https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT
 
 ## Goals
 6/21:
-- ✅ Decide on a project! 
-- ✅ Create a github repository 
-- ✅ Create a copy of the progress scorecard for your group and make it editable by everyone with the link, and post that link in your group slack channel 
+- ✅  Decide on a project! 
+- ✅  Create a github repository 
+- ✅  Create a copy of the progress scorecard for your group and make it editable by everyone with the link, and post that link in your group slack channel 
 - Begin work on your wiki documentation pages, starting with your Feature List
 
 ## Required Documentation
