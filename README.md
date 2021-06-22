@@ -1,7 +1,7 @@
 # PokéProbe
-## _W12 Express Group Project_
+### _W12 Express Group Project_
 
-## scorecard 
+## Scorecard 
 https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT6H8/edit?usp=sharing
 
 ## Goals
@@ -11,5 +11,5 @@ https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT
 - Create a copy of the progress scorecard for your group and make it editable by everyone with the link, and post that link in your group slack channel ✅
 - Begin work on your wiki documentation pages, starting with your Feature List
 
-## Resources:
+## Resources
 - https://github.com/appacademy-starters/express-project-planning-example/wiki
