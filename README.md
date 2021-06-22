@@ -1,4 +1,4 @@
-# pokeprobe
+# PokéProbe
 ## _W12 Express Group Project_
 
 ## scorecard 
