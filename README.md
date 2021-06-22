@@ -1,7 +1,7 @@
 # pokeprobe
 ## _W12 Express Group Project_
 
-##scorecard 
+## scorecard 
 https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT6H8/edit?usp=sharing
 
 ## Goals
