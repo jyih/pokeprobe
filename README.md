@@ -1,9 +1,6 @@
 # PokéProbe by Dugon
 ### _W12 Express Group Project_
 
-## Scorecard 
-https://docs.google.com/spreadsheets/d/10DUZrClt7FVK2p_DhujBLGyTEfdc7Ig69ZKzdtRT6H8/edit?usp=sharing
-
 ## Goals
 6/21:
 - ✅  Decide on a project! 
@@ -20,5 +17,4 @@ As you finish each piece of documentation, submit to your advisor for review. De
 - [Frontend Routes](https://open.appacademy.io/learn/js-py---apr-2021-cohort-1-online/week-12-apr-2021-cohort-1-online/frontend-routes)
 
 ## Resources
-- https://pokemon.alexonsager.net/
 - https://github.com/appacademy-starters/express-project-planning-example/wiki
