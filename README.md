@@ -6,18 +6,18 @@
 - ✅  Decide on a project! 
 - ✅  Create a github repository 
 - ✅  Create a copy of the progress scorecard for your group and make it editable by everyone with the link, and post that link in your group slack channel 
-- Begin work on your wiki documentation pages, starting with your Feature List
+- ✅  Begin work on your wiki documentation pages, starting with your Feature List
 
 6/22:
-- Complete your Feature List wiki page
+- ✅  Complete your Feature List wiki page
 - Begin work on User Stories
 
 6/23:
 - Complete User Stories
-- Begin work on Database Schema
+- ✅  Begin work on Database Schema
 
 6/24:
-- Complete Database Schema
+- Complete Database Schema (TODO: Add Foreign Keys)
 - Begin work on API Routes document
 - Finish Front End Routes page
 
