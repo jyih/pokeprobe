@@ -8,8 +8,10 @@ PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Po
 
 ### Backend
 * PostgresSQL
+* JavaScript
 
 ### Frontend
+* JavaScript
 * CSS3
 * HTML5
 
