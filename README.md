@@ -1,4 +1,37 @@
 # PokéProbe by Dugon
+
+(insert logo here)
+
+PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Pokémon Trainers can catch and share their Pokemon with other Pokémon Trainers.
+
+## Technologies Used
+
+### Backend
+* PostgresSQL
+
+### Frontend
+* CSS3
+* HTML5
+
+### Hosting
+* Heroku
+
+### Target Features
+* User authentication: users can sign up and sign in
+* PokePages
+* 
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------
+#TODO LIST: 
 ### _W12 Express Group Project_
 
 ## Goals
