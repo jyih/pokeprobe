@@ -36,18 +36,18 @@ PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Po
 
 
 ------------------------------------------------------
-#TODO LIST: 
+## TODO LIST: 
 ### _W12 Express Group Project_
 
 ## Goals
 6/21:
 - ✅  Decide on a project! 
 - ✅  Create a github repository 
-- ✅  Create a copy of the progress scorecard for your group and make it editable by everyone with the link, and post that link in your group slack channel 
-- ✅  Begin work on your wiki documentation pages, starting with your Feature List
+- ✅  Create a copy of the progress scorecard and make it editable by everyone with the link, and post that link in the slack channel 
+- ✅  Begin work on the wiki documentation pages, starting with the Feature List
 
 6/22:
-- ✅  Complete your Feature List wiki page
+- ✅  Complete the Feature List wiki page
 - Begin work on User Stories
 
 6/23:
@@ -61,7 +61,7 @@ PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Po
 
 6/25: 
 - Finish planning documents
-- Begin sketching out some wireframes/general asthetic of your project
+- Begin sketching out some wireframes/general asthetic of the project
 
 ## Required Documentation
 As you finish each piece of documentation, submit to your advisor for review. Deadline for submitting all the documentation is Friday morning before lunch.
@@ -73,3 +73,5 @@ As you finish each piece of documentation, submit to your advisor for review. De
 
 ## Resources
 - https://github.com/appacademy-starters/express-project-planning-example/wiki
+- https://dbdiagram.io/
+- https://dillinger.io/
