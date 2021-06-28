@@ -1,0 +1,6 @@
+extends layout.pug
+//- include utils.pug
+
+body
+    form(action="/trainers" method="post")
+    input(type="hidden" name="_csrf" value=csrfToken)
