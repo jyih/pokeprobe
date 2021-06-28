@@ -1,0 +1,12 @@
+mixin createFormField(inputType,name,label,value='', placeholder=label)
+    div(class='form-div')
+        label(for=name)= label
+        input(type=inputType name=name value=value placeholder=placeholder)
+
+mixin validationErrorSummary(errors)
+    if errors
+        div
+            p The following errors occurred
+            ul
+                each error in errors
+                    li= error
