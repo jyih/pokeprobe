@@ -1,6 +1,18 @@
 extends layout.pug
-//- include utils.pug
+include utils.pug
 
-body
+block content
     form(action="/trainers" method="post")
-    input(type="hidden" name="_csrf" value=csrfToken)
+        input(type="hidden" name="_csrf" value=csrfToken)
+        +createFormField("text","username","Trainer Name")
+        +createFormField("text","firstName","First Name")
+        +createFormField("text","lastName","Last Name")
+        +createFormField("email","email","Email")
+        label(for="bio") Bio
+        textarea(name="bio")
+        +createFormField("password","password","Password")
+        +createFormField("password","confirmPassword","Confirm Password")
+        button Submit
+        //- username firstname lastname email password confirmpassword
+        //- inputType,name,label,value, placeholder = label)
+        //- add trainer.formfield for persistent fields after reload
