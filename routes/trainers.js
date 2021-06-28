@@ -20,7 +20,7 @@ function formError(err, req, res, next) {
     // render the error page
     console.log(err);
     res.status(err.status || 500);
-    res.render("error", { errors })
+    res.render("error", { errors });
 }
 
 /* GET users listing. */
