@@ -3,7 +3,7 @@ const db = require("./db/models");
 const { Trainer } = db;
 
 const loginTrainer = (req, res, trainer) => {
-  console.log(trainer.id)
+  // console.log(trainer)
   req.session.auth = {
     userId: trainer.id
   }

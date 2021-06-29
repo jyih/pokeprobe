@@ -72,9 +72,9 @@ router.get(
 
 router.post(
     "/",
-    // formValidation,
-    // handleValidationErrors,
-    // csrfProtection,
+    formValidation,
+    handleValidationErrors,
+    csrfProtection,
     asyncHandler(async (req, res, next) => {
         if (!req.errors) {
             const { trainerName, firstName, lastName, email, bio, password } =
@@ -89,45 +89,31 @@ router.post(
                 password: hashedPassword,
             });
             res.json({ trainer });
-            // res.redirect('/')
+            res.redirect('/')
         } else {
             res.render('trainer-signup', {
                 errors: req.errors,
-                // csrfToken: req.csrfToken()
+                csrfToken: req.csrfToken()
             })
         }
     })
 );
 
 router.get('/login',
-    // csrfProtection, 
+    csrfProtection,
     (req, res,) => {
         res.render('trainer-login', {
             title: 'Let me innnnn',
-            // csrfToken: req.csrfToken()
+            csrfToken: req.csrfToken()
         })
         console.log(req.session.auth)
     }
 );
 
-// const loginValidator = async (email, password) => {
-//     const trainer = await Trainer.findOne({
-//         where: { email }
-//     })
-
-//     if (trainer) {
-//         const passwordMatch = await bcrypt.compare(password, trainer.password.toString());
-//         if (passwordMatch) return trainer;
-//     }
-//     return false;
-// }
-
-
 router.post('/login',
-    // csrfProtection, 
+    csrfProtection,
     asyncHandler(async (req, res, next) => {
         const { email, password } = req.body;
-        // const trainer = await loginValidator(email, password);
 
         const trainer = await Trainer.findOne({
             where: { email }
@@ -145,7 +131,7 @@ router.post('/login',
             req.errors = ['Login credentials failed to match an existing user.'];
             res.render('trainer-login', {
                 errors: req.errors,
-                // csrfToken: req.csrfToken()
+                csrfToken: req.csrfToken()
             })
         }
     })
@@ -158,7 +144,7 @@ router.get('/logout', asyncHandler(async (req, res, next) => {
 router.post('/logout', asyncHandler(async (req, res, next) => {
     // console.log('before logout:' + req.session.auth)
     logoutTrainer(req, res);
-    console.log('after logout:' + req.session.auth)
+    // console.log('after logout:' + req.session.auth)
     res.redirect('/trainers/login');
 }))
 
