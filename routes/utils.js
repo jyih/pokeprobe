@@ -8,12 +8,12 @@ const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).ca
 const handleValidationErrors = (req, res, next) => {
     const validationErrors = validationResult(req)
     if (!validationErrors.isEmpty()) {
-        const errors = validationErrors.array().map(error => {
-                return error.msg
-            })
-            req.errors = errors
-            console.log(req.errors)
- 
+        const errors = validationErrors.array().map(error => error.msg)
+        req.errors = errors
+        const newError = Error('bad')
+        newError.title = 'new error title'
+        newError.errors = errors;
+        next(newError);
     } // can remove return and add else
     next()
 }
