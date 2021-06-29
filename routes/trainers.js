@@ -1,5 +1,5 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const {
     csrfProtection,
     asyncHandler,
@@ -72,9 +72,9 @@ router.get(
 
 router.post(
     "/",
-    formValidation,
-    handleValidationErrors,
-    csrfProtection,
+    // formValidation,
+    // handleValidationErrors,
+    // csrfProtection,
     asyncHandler(async (req, res, next) => {
         if (!req.errors) {
             const { trainerName, firstName, lastName, email, bio, password } =
@@ -93,7 +93,7 @@ router.post(
         } else {
             res.render('trainer-signup', {
                 errors: req.errors,
-                csrfToken: req.csrfToken()
+                // csrfToken: req.csrfToken()
             })
         }
     })
@@ -101,12 +101,13 @@ router.post(
 
 router.get('/login',
     // csrfProtection, 
-    asyncHandler(async (req, res, next) => {
+    (req, res,) => {
         res.render('trainer-login', {
             title: 'Let me innnnn',
             // csrfToken: req.csrfToken()
         })
-    })
+        console.log(req.session.auth)
+    }
 );
 
 // const loginValidator = async (email, password) => {
@@ -150,10 +151,14 @@ router.post('/login',
     })
 )
 
+router.get('/logout', asyncHandler(async (req, res, next) => {
+    res.render('trainer-logout')
+}))
+
 router.post('/logout', asyncHandler(async (req, res, next) => {
     // console.log('before logout:' + req.session.auth)
     logoutTrainer(req, res);
-    // console.log('after logout:' + req.session.auth)
+    console.log('after logout:' + req.session.auth)
     res.redirect('/trainers/login');
 }))
 

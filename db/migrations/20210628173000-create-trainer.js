@@ -28,7 +28,7 @@ module.exports = {
             },
             password: {
                 allowNull: false,
-                type: Sequelize.STRING(255)
+                type: Sequelize.STRING.BINARY
             },
             bio: {
                 type: Sequelize.TEXT
