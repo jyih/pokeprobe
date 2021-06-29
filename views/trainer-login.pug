@@ -1,0 +1,13 @@
+extends layout.pug
+include utils.pug
+
+block content
+    +validationErrorSummary(errors)
+    p
+    form(action="/trainers/login" method="post")
+      input(type="hidden" name="_csrf" value=csrfToken)
+      +createFormField("email","email","Email")
+      +createFormField("password","password","Password")
+      button Login
+    form(action='/trainers/demo-login' method='post')
+      button(type='submit') Demo User

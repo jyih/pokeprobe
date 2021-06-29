@@ -3,7 +3,6 @@ include utils.pug
 
 block content
     +validationErrorSummary(errors)
-    p
     form(action="/trainers" method="post")
         input(type="hidden" name="_csrf" value=csrfToken)
         +createFormField("text","trainerName","Trainer Name")
