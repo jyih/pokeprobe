@@ -26,17 +26,21 @@ const store = new SequelizeStore({ db: sequelize });
 
 app.use(
     session({
+        name: 'pokesesh',
         secret: 'superSecret',
         store,
         saveUninitialized: false,
         resave: false,
+        cookie: {
+            maxAge: 3600000
+        }
     })
 );
 
 // create Session table if it doesn't already exist
 store.sync();
 
-app.use(restoreTrainer);
+// app.use(restoreTrainer);
 app.use('/', indexRouter);
 app.use('/trainers', trainersRouter);
 
