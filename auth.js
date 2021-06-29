@@ -6,6 +6,7 @@ const loginTrainer = (req, res, trainer) => {
   req.session.auth = {
     userId: trainer.id
   }
+  // console.log(req.session.auth)
 }//yay
 
 const logoutTrainer = (req, res) => {

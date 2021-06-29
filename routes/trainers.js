@@ -145,7 +145,13 @@ router.post('/logout', asyncHandler(async (req, res, next) => {
 }))
 
 router.post('/demo-login', asyncHandler(async (req, res, next) => {
-
+    const demoTrainer = await Trainer.findOne({
+        where: {
+            email: 'demo@email.com'
+        }
+    })
+    loginTrainer(req, res, demoTrainer);
+    res.redirect('/')
 }))
 
 module.exports = router;
