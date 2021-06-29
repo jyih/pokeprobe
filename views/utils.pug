@@ -6,7 +6,7 @@ mixin createFormField(inputType,name,label,value='', placeholder=label)
 mixin validationErrorSummary(errors)
     if errors
         div
-            p The following errors occurred
+            p The following errors occurred:
             ul
                 each error in errors
                     li= error
