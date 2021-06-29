@@ -106,7 +106,6 @@ router.get('/login',
             title: 'Let me innnnn',
             csrfToken: req.csrfToken()
         })
-        console.log(req.session.auth)
     }
 );
 
@@ -119,7 +118,6 @@ router.post('/login',
             where: { email }
         })
 
-        console.log('hit login', trainer)
         if (trainer) {
             const passwordMatch = await bcrypt.compare(password, trainer.password.toString());
             if (passwordMatch) {
@@ -142,9 +140,7 @@ router.get('/logout', asyncHandler(async (req, res, next) => {
 }))
 
 router.post('/logout', asyncHandler(async (req, res, next) => {
-    // console.log('before logout:' + req.session.auth)
     logoutTrainer(req, res);
-    // console.log('after logout:' + req.session.auth)
     res.redirect('/trainers/login');
 }))
 
