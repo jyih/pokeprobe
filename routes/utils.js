@@ -11,14 +11,9 @@ const handleValidationErrors = (req, res, next) => {
         const errors = validationErrors.array().map(error => {
                 return error.msg
             })
-            //req.error = errors
-            //next()
-            // inside other file if (req.errors) res.render(???)
-        const err = new Error('Bad Request')
-        err.errors = errors
-        err.status = 400
-        err.title = "Bad Request"
-        return next(err)
+            req.errors = errors
+            console.log(req.errors)
+ 
     } // can remove return and add else
     next()
 }

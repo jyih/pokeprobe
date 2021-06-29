@@ -1,6 +1,8 @@
 extends layout
+include utils.pug
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+    +validationErrorSummary(errors)
+    h1= message
+    h2= error.status
+    pre #{error.stack}
