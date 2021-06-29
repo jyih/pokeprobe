@@ -9,6 +9,12 @@ const db = require("../db/models");
 const { Trainer } = db;
 const bcrypt = require("bcrypt");
 const { check, validationResult } = require("express-validator");
+const {
+    loginTrainer,
+    logoutTrainer,
+    requireAuth,
+    restoreTrainer
+} = require('../auth')
 // express validator necessary
 
 /* GET users listing. */
@@ -95,8 +101,42 @@ router.post(
     })
 );
 
-// router.use(function(err, req, res, next) {
+router.get('/login', csrfProtection, asyncHandler(async (req, res, next) => {
+    res.render('trainer-login', {
+        title: 'Let me innnnn',
+        csrfToken: req.csrfToken()
+    })
+}));
 
-// })
+const loginValidator = async (email, password) => {
+    const trainer = await Trainer.findOne({
+        where: { email }
+    })
+
+    if (trainer) {
+        const passwordMatch = await bcrypt.compare(password, trainer.password);
+        if (passwordMatch) return trainer;
+    }
+    return false;
+}
+
+
+router.post('/login', csrfProtection, asyncHandler(async (req, res, next) => {
+    const { email, password } = req.body;
+    const trainer = await loginValidator(email, password);
+
+    if (trainer) {
+        loginTrainer(req, res, trainer)
+        res.redirect('/');
+    } else {
+        // let errorMsg = 'Login credentials failed to match an existing user.'
+        req.errors = ['Login credentials failed to match an existing user.'];
+        res.render('trainer-login', {
+            errors: req.errors,
+            csrfToken: req.csrfToken()
+        })
+    }
+}))
+
 
 module.exports = router;

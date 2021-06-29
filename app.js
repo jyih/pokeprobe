@@ -8,6 +8,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const trainersRouter = require('./routes/trainers');
+const { restoreTrainer } = require('./auth')
 
 const app = express();
 
@@ -35,16 +36,17 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
+app.use(restoreTrainer);
 app.use('/', indexRouter);
 app.use('/trainers', trainersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
