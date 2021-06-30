@@ -20,5 +20,8 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.remoteColor": "#b00b69",
-    "peacock.color": "#b00b69"
+    "peacock.color": "#b00b69",
+    "cSpell.words": [
+        "Pokedex"
+    ]
 }
