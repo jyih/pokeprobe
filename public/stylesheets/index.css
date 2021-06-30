@@ -4,17 +4,14 @@ h1 {
 }
 /* project skeleton starter - end */
 
-/* nav bar */
+/* nav bar
 .navbar-container {
     display: flex;
     justify-content: flex-start;
     top: 0px;
     /* left: 0px; */
-    background-color: lightblue;
-    width: 100%;
-    margin: 0px;
-}
 
+/*
 .logo-small {
     width: 50px;
     margin: 10px;
@@ -39,7 +36,7 @@ h1 {
     margin: 10px;
     width: 100px;
     height: auto;
-}
+} */
 
 
 /* small shadow for small elements: input, textarea, buttons */
