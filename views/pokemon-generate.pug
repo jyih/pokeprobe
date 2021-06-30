@@ -1,0 +1,17 @@
+extends layout.pug 
+include utils.pug
+
+append head 
+  script(src="/javascripts/pokemon-generate.js" type="module" defer)
+
+block content
+  div 
+    img(id='pokemon-random-img')
+  div
+    button(id='pokemon-release-button') Release
+  div
+    form(action='/fusion-pokemon' method='post') 
+      +createFormField('text','name','Name')
+      label(for="description") Description
+      textarea(name="description")
+      button Catch
