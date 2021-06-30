@@ -1,9 +1,5 @@
 body{
     background-color: #eef2f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    place-items: center;
     overflow: hidden;
     font-family: 'Oswald', sans-serif;
     overflow: auto;
@@ -21,7 +17,11 @@ body{
     margin-left: 50px;
 }
 
-label, input, button, textarea {
+label, 
+input,
+.login-button,
+.signup-button,
+textarea {
     display: block;
     width: 100%;
     padding: 0;
@@ -50,7 +50,8 @@ input {
     margin-top: 5px;
 }
 
-button {
+.login-button,
+.signup-button {
     margin-top: 10px;
     background: #ffcc03;
     border: #386abb 3px solid;
@@ -63,8 +64,8 @@ button {
 /* LOG-IN */
 
 .login-container {
-    position: relative;
-    top: 50px;
+    margin: auto;
+    margin-top: 50px;
     width: 400px;
     height: auto;
     border-radius: 20px;
@@ -114,8 +115,8 @@ button {
 /* SIGN UP */
 
 .signup-container {
-    position: relative;
-    top: 50px;
+    margin: auto;
+    margin-top: 50px;
     width: 500px;
     height: auto;
     border-radius: 20px;
