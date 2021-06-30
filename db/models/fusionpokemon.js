@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     FusionPokemon.belongsTo(models.Pokedex, { as: 'Pokedex2', foreignKey: 'pokedexId2' })
     FusionPokemon.belongsTo(models.Trainer, { foreignKey: 'trainerId' })
 
-    FusionPokemon.hasOne(models.PokePages, { foreignKey: 'fusionPokemonId' })
+    FusionPokemon.hasOne(models.PokePage, { foreignKey: 'fusionPokemonId' })
   };
   return FusionPokemon;
 };
