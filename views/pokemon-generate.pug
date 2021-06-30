@@ -6,12 +6,14 @@ append head
 
 block content
   div 
-    img(id='pokemon-random-img')
+    img(id='pokemon-random-img' src='https://img.pokemondb.net/artwork/large/dewgong.jpg')
   div
     button(id='pokemon-release-button') Release
   div
     form(action='/fusion-pokemon' method='post') 
+      input(type="hidden" name="_csrf" value=csrfToken)
       +createFormField('text','name','Name')
       label(for="description") Description
       textarea(name="description")
-      button Catch
+      div
+        button Catch
