@@ -7,10 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Pokedex.associate = function (models) {
     //try 6
-    Pokedex.belongsTo(models.Type, { as: 'aType', foreignKey: 'type1Id' })
-    Pokedex.belongsTo(models.Type, { as: 'bType', foreignKey: 'type2Id' })
-
-
+    Pokedex.belongsTo(models.Type, { as: 'Type1', foreignKey: 'type1Id' })
+    Pokedex.belongsTo(models.Type, { as: 'Type2', foreignKey: 'type2Id' })
   };
   return Pokedex;
 };

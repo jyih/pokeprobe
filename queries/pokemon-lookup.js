@@ -5,15 +5,15 @@ const { Op } = require('sequelize');
 
 async function lookupPokemon1(typeId) {
   /*
-    Type.hasMany(models.Pokedex, { as: 'aType', foreignKey: 'type1Id' })
-    Pokedex.belongsTo(models.Type, { as: 'aType', foreignKey: 'type1Id' })
-    Pokedex.belongsTo(models.Type, { as: 'bType', foreignKey: 'type2Id' })
+    Type.hasMany(models.Pokedex, { as: 'Type1', foreignKey: 'type1Id' })
+    Pokedex.belongsTo(models.Type, { as: 'Type1', foreignKey: 'type1Id' })
+    Pokedex.belongsTo(models.Type, { as: 'Type2', foreignKey: 'type2Id' })
   */
 
   let results = await Pokedex.findAll({
     include: [{
       model: Type,
-      as: 'aType'
+      as: 'Type1'
     }],
     where: {
       type1Id: typeId
@@ -23,7 +23,7 @@ async function lookupPokemon1(typeId) {
   // let names = results.map(pokemon => pokemon.name)
   // console.log(names)
   // console.log(results)
-  let pokedex = results.map(pokedex => pokedex.aType.type)
+  let pokedex = results.map(pokedex => pokedex.Type1.type)
   console.log(pokedex)
 };
 
@@ -83,38 +83,38 @@ async function lookupPokemon5(typeName) {
 };
 
 async function lookupPokemon6(typeName) {
-  // Pokedex.belongsTo(models.Type, { as: 'aType', foreignKey: 'type1Id' })
-  // Pokedex.belongsTo(models.Type, { as: 'bType', foreignKey: 'type2Id' })
-  // Type.hasMany(models.Pokedex, { as: 'aType', foreignKey: 'type1Id' })
-  // Type.hasMany(models.Pokedex, { as: 'bType', foreignKey: 'type2Id' })
+  // Pokedex.belongsTo(models.Type, { as: 'Type1', foreignKey: 'type1Id' })
+  // Pokedex.belongsTo(models.Type, { as: 'Type2', foreignKey: 'type2Id' })
+  // Type.hasMany(models.Pokedex, { as: 'Type1', foreignKey: 'type1Id' })
+  // Type.hasMany(models.Pokedex, { as: 'Type2', foreignKey: 'type2Id' })
   let pokedexes = await Pokedex.findAll({
     include: [
       {
         model: Type,
-        as: 'aType',
+        as: 'Type1',
       },
       {
         model: Type,
-        as: 'bType'
+        as: 'Type2'
       }
     ],
   })
 
-  // console.log(pokemon.map(pokedex => pokedex.aType.type))
-  // console.log(pokemon.map(pokedex => pokedex.bType.type))
+  // console.log(pokemon.map(pokedex => pokedex.Type1.type))
+  // console.log(pokemon.map(pokedex => pokedex.Type2.type))
   let middle = pokedexes.filter(pokedex => {
     return (
-      pokedex.aType.type === typeName
-      || (pokedex.bType
-        ? pokedex.bType.type === typeName
+      pokedex.Type1.type === typeName
+      || (pokedex.Type2
+        ? pokedex.Type2.type === typeName
         : null === typeName)
     )
   })
   let pokemon = middle.map(pokedex => {
     let mon = {}
     mon[`${pokedex.name}`] = [];
-    mon[`${pokedex.name}`].push(pokedex.aType.type)
-    mon[`${pokedex.name}`].push(pokedex.bType ? pokedex.bType.type : null)
+    mon[`${pokedex.name}`].push(pokedex.Type1.type)
+    mon[`${pokedex.name}`].push(pokedex.Type2 ? pokedex.Type2.type : null)
     return mon;
   })
   console.log(pokemon)
@@ -125,11 +125,11 @@ async function lookupPokemon7(typeName) {
     include: [
       {
         model: Type,
-        as: 'aType',
+        as: 'Type1',
       },
       {
         model: Type,
-        as: 'bType'
+        as: 'Type2'
       }
     ],
   })

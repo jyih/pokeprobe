@@ -12,10 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     // })
 
     //try 6
-    Type.hasMany(models.Pokedex, { as: 'aType', foreignKey: 'type1Id' })
-    Type.hasMany(models.Pokedex, { as: 'bType', foreignKey: 'type2Id' })
-
-
+    Type.hasMany(models.Pokedex, { as: 'Type1', foreignKey: 'type1Id' })
+    Type.hasMany(models.Pokedex, { as: 'Type2', foreignKey: 'type2Id' })
   };
   return Type;
 };

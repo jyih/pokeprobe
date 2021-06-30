@@ -171,7 +171,8 @@ router.get('/query-test', asyncHandler(async (req, res, next) => {
     // lookupPokemon1('1')
     // lookupPokemon5('Flying')
     lookupPokemon6('Flying')
-    lookupPokemon7('Flying')
+    lookupPokemon6('Poison')
+    // lookupPokemon7('Flying')
 }))
 
 module.exports = router;
