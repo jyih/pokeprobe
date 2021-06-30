@@ -7,8 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     pokedexId2: DataTypes.INTEGER,
     trainerId: DataTypes.INTEGER
   }, {});
-  FusionPokemon.associate = function(models) {
-    // associations can be defined here
+  FusionPokemon.associate = function (models) {
+    FusionPokemon.belongsTo(models.Pokedex, { as: 'Pokedex1', foreignKey: 'pokedexId1' })
+    FusionPokemon.belongsTo(models.Pokedex, { as: 'Pokedex2', foreignKey: 'pokedexId2' })
+    FusionPokemon.belongsTo(models.Trainer, { foreignKey: 'trainerId' })
+
+    FusionPokemon.hasOne(models.PokePages, { foreignKey: 'fusionPokemonId' })
   };
   return FusionPokemon;
 };

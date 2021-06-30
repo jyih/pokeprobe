@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.TEXT
   }, {});
   Trainer.associate = function (models) {
-    // associations can be defined here
+    Trainer.hasMany(models.FusionPokemon, { foreignKey: 'trainerId' })
+    Trainer.hasMany(models.Comment, { foreignKey: 'trainerId' })
+    Trainer.hasMany(models.PokePage, { foreignKey: 'trainerId' })
   };
   return Trainer;
 };
