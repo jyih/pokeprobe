@@ -4,6 +4,43 @@ h1 {
 }
 /* project skeleton starter - end */
 
+/* nav bar */
+.navbar-container {
+    display: flex;
+    justify-content: flex-start;
+    top: 0px;
+    /* left: 0px; */
+    background-color: lightblue;
+    width: 100%;
+    margin: 0px;
+}
+
+.logo-small {
+    width: 50px;
+    margin: 10px;
+}
+
+.search-bar-spot {
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.mag-icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    width: 50px;
+}
+
+.log-out-button {
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+    width: 100px;
+    height: auto;
+}
+
 
 /* small shadow for small elements: input, textarea, buttons */
 .small-shadow {

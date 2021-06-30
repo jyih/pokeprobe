@@ -45,5 +45,7 @@
     box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
     transition: 0.7s;
     margin-top: 5px;
+    resize: none;
+    height: 100px;
     overflow: hidden;
 }

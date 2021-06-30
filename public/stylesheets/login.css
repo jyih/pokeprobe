@@ -74,7 +74,7 @@ body{
     margin-left: 50px;
 }
 
-label, input, button, textarea {
+.login-container > label, input, button, textarea {
     display: block;
     width: 100%;
     padding: 0;
@@ -84,14 +84,14 @@ label, input, button, textarea {
     font-family: 'Oswald', sans-serif;
 }
 
-label {
+.login-container > label {
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 10pt;
     letter-spacing: 1px;
 }
 
-input {
+.login-container > input {
     background: #eef2f5;
     padding: 10px;
     padding-left: 20px;
@@ -103,7 +103,7 @@ input {
     margin-top: 5px;
 }
 
-button {
+.login-container > button {
     margin-top: 10px;
     background: #ffcc03;
     border: #386abb 3px solid;
