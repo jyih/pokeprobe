@@ -10,11 +10,12 @@ body{
     place-items: center;
     overflow: hidden;
     font-family: 'Oswald', sans-serif;
+    overflow: auto;
 }
 
 .login-container {
     position: relative;
-    top: 100px;
+    top: 50px;
     width: 400px;
     height: auto;
     border-radius: 20px;
