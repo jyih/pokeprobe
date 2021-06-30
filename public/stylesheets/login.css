@@ -61,6 +61,18 @@ body{
     margin-bottom: 50px;
 }
 
+.error-alert {
+    color: red;
+    font-size: 10pt;
+    margin-left: 10px;
+}
+
+.error-list {
+    color: red;
+    font-size: 10pt;
+    margin-left: 50px;
+}
+
 label, input, button, textarea {
     display: block;
     width: 100%;
