@@ -1,5 +1,5 @@
 body{
-    background-color: #edf7ff;
+    background-color: #eef2f5;
     /* background-image: url('https://github.com/jyih/pokeprobe/raw/main/assets/images/pokeprobe-logo.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -9,21 +9,23 @@ body{
     justify-content: center;
     place-items: center;
     overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+    overflow: auto;
 }
 
 .login-container {
     position: relative;
-    top: 100px;
+    top: 50px;
     width: 400px;
-    height: 600px;
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #edf7ff;
+    background: #eef2f5;
     box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
 }
 
-.dugon-logo {
+.dugon-logo-login {
     height: 150px;
     width: 150px;
     background: url('https://cdn.discordapp.com/attachments/856636315927576608/859574573070680084/137.51.png');
@@ -36,37 +38,61 @@ body{
     box-shadow: 7px 7px 10px #e6eaec, -7px -7px 10px white;
 }
 
-.slogan {
+.pokeprobe-logo-small {
+    position: relative;
+    display: block;
+    align-items: center;
+    width: 200px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.dugon-slogan {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18pt;
+    font-size: 20pt;
     -webkit-text-fill-color: #ffcc03;
     -webkit-text-stroke-color: #386abb;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 2px;
     /* color: #ffcc03;
     text-shadow: #386abb 1px solid; */
     margin-bottom: 50px;
 }
 
-label, input, button {
+.error-alert {
+    color: red;
+    font-size: 10pt;
+    margin-left: 10px;
+}
+
+.error-list {
+    color: red;
+    font-size: 10pt;
+    margin-left: 50px;
+}
+
+label, input, button, textarea {
     display: block;
     width: 100%;
     padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 label {
     margin-top: 10px;
     margin-bottom: 0px;
-    font-family: arial;
     font-size: 10pt;
     letter-spacing: 1px;
 }
 
 input {
-    background: #edf7ff;
+    background: #eef2f5;
     padding: 10px;
     padding-left: 20px;
     height: 50px;
