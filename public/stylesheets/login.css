@@ -24,7 +24,7 @@ body{
     box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
 }
 
-.dugon-logo {
+.dugon-logo-login {
     height: 150px;
     width: 150px;
     background: url('https://cdn.discordapp.com/attachments/856636315927576608/859574573070680084/137.51.png');
@@ -37,7 +37,18 @@ body{
     box-shadow: 7px 7px 10px #e6eaec, -7px -7px 10px white;
 }
 
-.slogan {
+.pokeprobe-logo-small {
+    position: relative;
+    display: block;
+    align-items: center;
+    width: 200px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.dugon-slogan {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     text-transform: uppercase;

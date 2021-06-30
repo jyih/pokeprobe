@@ -2,10 +2,11 @@ extends layout.pug
 include utils.pug
 
 block content
-    +validationErrorSummary(errors)
     div(class="login-container")
-      div(class="dugon-logo")
-      div(class="slogan") PokeProbe <br> Powered by Dugon
+      div(class="dugon-logo-login")
+      <img src="https://media.discordapp.net/attachments/856636315927576608/858001199876669460/9f0b8f3078363686cd5625c722e5774e.png" class="pokeprobe-logo-small">
+      div(class="dugon-slogan") Powered by Dugon
+      +validationErrorSummary(errors)
       form(action="/trainers/login" method="post")
         input(type="hidden" name="_csrf" value=csrfToken)
         +createFormField("email","email","Email")
