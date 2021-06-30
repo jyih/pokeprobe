@@ -2,18 +2,21 @@ extends layout.pug
 include utils.pug
 
 block content
-    +validationErrorSummary(errors)
-    form(action="/trainers" method="post")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        +createFormField("text","trainerName","Trainer Name")
-        +createFormField("text","firstName","First Name")
-        +createFormField("text","lastName","Last Name")
-        +createFormField("email","email","Email")
-        label(for="bio") Bio
-        textarea(name="bio")
-        +createFormField("password","password","Password")
-        +createFormField("password","confirmPassword","Confirm Password")
-        button Submit
-        //- username firstname lastname email password confirmpassword
-        //- inputType,name,label,value, placeholder = label)
-        //- add trainer.formfield for persistent fields after reload
+    div(class="signup-container")
+        <img src="https://media.discordapp.net/attachments/856636315927576608/858001199876669460/9f0b8f3078363686cd5625c722e5774e.png" class="pokeprobe-logo">
+        div(class="register-text") Register
+        +validationErrorSummary(errors)
+        form(action="/trainers" method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            +createFormField("text","trainerName","Trainer Name")
+            +createFormField("text","firstName","First Name")
+            +createFormField("text","lastName","Last Name")
+            +createFormField("email","email","Email")
+            label(for="bio") Bio
+            textarea(name="bio" class="bio-input")
+            +createFormField("password","password","Password")
+            +createFormField("password","confirmPassword","Confirm Password")
+            button Submit
+            //- username firstname lastname email password confirmpassword
+            //- inputType,name,label,value, placeholder = label)
+            //- add trainer.formfield for persistent fields after reload

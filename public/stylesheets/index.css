@@ -1,3 +1,75 @@
+/* project skeleton starter - start */
 h1 {
     color: #555555;
+}
+/* project skeleton starter - end */
+
+/* nav bar
+.navbar-container {
+    display: flex;
+    justify-content: flex-start;
+    top: 0px;
+    /* left: 0px; */
+
+/*
+.logo-small {
+    width: 50px;
+    margin: 10px;
+}
+
+.search-bar-spot {
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.mag-icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    width: 50px;
+}
+
+.log-out-button {
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+    width: 100px;
+    height: auto;
+} */
+
+
+/* small shadow for small elements: input, textarea, buttons */
+.small-shadow {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
+}
+
+/* medium shadow for medium elements */
+.medium-shadow {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 7px 7px 10px #e6eaec, -7px -7px 10px white;
+}
+
+/* large shadow for large elements */
+.large-shadow {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
+}
+
+/* using this to test, pls don't delete */
+.make-red {
+    border: 1px solid red !important;
 }
