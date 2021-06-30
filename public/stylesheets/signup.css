@@ -1,0 +1,51 @@
+.signup-container {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #eef2f5;
+    box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
+    overflow: auto;
+}
+
+.pokeprobe-logo {
+    position: relative;
+    display: block;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.register-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20pt;
+    -webkit-text-fill-color: #ffcc03;
+    -webkit-text-stroke-color: #386abb;
+    -webkit-text-stroke-width: 2px;
+    /* color: #ffcc03;
+    text-shadow: #386abb 1px solid; */
+    margin-bottom: 20px;
+}
+
+.bio-input {
+    background: #eef2f5;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
+    transition: 0.7s;
+    margin-top: 5px;
+    resize: none;
+    height: 100px;
+    overflow: hidden;
+}

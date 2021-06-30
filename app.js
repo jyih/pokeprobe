@@ -8,6 +8,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const trainersRouter = require('./routes/trainers');
+const pokemonRouter = require('./routes/pokemon');
 const { restoreTrainer } = require('./auth')
 
 const app = express();
@@ -43,6 +44,7 @@ store.sync();
 // app.use(restoreTrainer);
 app.use('/', indexRouter);
 app.use('/trainers', trainersRouter);
+app.use('/fusion-pokemon', pokemonRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
