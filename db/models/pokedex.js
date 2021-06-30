@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     type1Id: DataTypes.INTEGER,
     type2Id: DataTypes.INTEGER
-  }, {});
+  }, {
+    freezeTableName: true
+  });
   Pokedex.associate = function (models) {
     //try 6
     Pokedex.belongsTo(models.Type, { as: 'Type1', foreignKey: 'type1Id' })

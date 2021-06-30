@@ -121,6 +121,12 @@ async function lookupPokemon6(typeName) {
 };
 
 async function lookupPokemon7(typeName) {
+  let typing = await Type.findOne({
+    where: {
+      type: typeName
+    }
+  })
+
   let pokedexes = await Pokedex.findAll({
     include: [
       {
@@ -132,7 +138,15 @@ async function lookupPokemon7(typeName) {
         as: 'Type2'
       }
     ],
+    where: {
+      [Op.or]: {
+        type1Id: typing.id,
+        type2Id: typing.id
+      }
+    }
   })
+
+  console.log(pokedexes)
 }
 
 module.exports = {
