@@ -13,7 +13,7 @@ const handleValidationErrors = (req, res, next) => {
         const newError = Error('bad')
         newError.title = 'new error title'
         newError.errors = errors;
-        next(newError);
+        // next(newError);
     } // can remove return and add else
     next()
 }

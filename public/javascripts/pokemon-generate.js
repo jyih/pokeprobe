@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+  const fusionImg = document.getElementById('pokemon-random-img')
+  const releaseButton = document.getElementById('pokemon-release-button')
+  const catchButton = document.getElementById('pokemon-catch-button')
 
   /*
     :)
@@ -26,7 +29,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fusion.id2 = generateDexNumber();
     fusion.fusionUrl = generateFusionURL(fusion.id1, fusion.id2)
 
-    let fusionImg = document.getElementById('pokemon-random-img')
     fusionImg.src = fusion.fusionUrl
 
     console.log(fusion);
@@ -35,8 +37,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   let fusionData = generateFusionData();
 
-  let releaseButton = document.getElementById('pokemon-release-button')
   releaseButton.addEventListener('click', event => {
     fusionData = generateFusionData();
   })
+
+
+
 })
