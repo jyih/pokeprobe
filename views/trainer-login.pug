@@ -1,6 +1,9 @@
 extends layout.pug
 include utils.pug
 
+append head 
+    link(rel='stylesheet' href='/stylesheets/login.css')
+
 block content
     div(class="login-container")
       div(class="dugon-logo-login")

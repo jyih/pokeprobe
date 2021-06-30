@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     fusionImg.src = fusion.fusionUrl
 
-    console.log(fusion);
+    // console.log(fusion);
     return fusion
   }
 
@@ -41,6 +41,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fusionData = generateFusionData();
   })
 
+  catchButton.addEventListener('click', (event) => {
+      const pokedexId1 = document.getElementById('pokedexId1')
+      const pokedexId2 = document.getElementById('pokedexId2')
 
+      pokedexId1.value = fusionData.id1
+      pokedexId2.value = fusionData.id2
+  })
+  
 
 })
