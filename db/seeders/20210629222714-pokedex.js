@@ -12,7 +12,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    return queryInterface.bulkInsert('Pokedex', [
+    return queryInterface.bulkInsert('Pokedexes', [
       { name: 'Bulbasaur', type1Id: 12, type2Id: 4, createdAt: new Date(), updatedAt: new Date() },
       { name: 'Ivysaur', type1Id: 12, type2Id: 4, createdAt: new Date(), updatedAt: new Date() },
       { name: 'Venusaur', type1Id: 12, type2Id: 4, createdAt: new Date(), updatedAt: new Date() },

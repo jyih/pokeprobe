@@ -6,7 +6,7 @@ const {
     handleValidationErrors,
 } = require("./utils");
 const db = require("../db/models");
-const { Trainer } = db;
+const { Trainer, Type, Pokedex } = db;
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const {
@@ -16,6 +16,16 @@ const {
     restoreTrainer
 } = require('../auth')
 // express validator necessary
+
+const {
+    lookupPokemon1,
+    lookupPokemon2,
+    lookupPokemon3,
+    lookupPokemon4,
+    lookupPokemon5,
+    lookupPokemon6,
+    lookupPokemon7,
+} = require('../queries/pokemon-lookup.js')
 
 /* GET users listing. */
 
@@ -152,6 +162,16 @@ router.post('/demo-login', asyncHandler(async (req, res, next) => {
     })
     loginTrainer(req, res, demoTrainer);
     res.redirect('/')
+}))
+
+router.get('/query-test', asyncHandler(async (req, res, next) => {
+    // console.log(await lookupPokemon3('Normal'))
+    // lookupPokemon4(await lookupPokemon3('Normal'));
+
+    // lookupPokemon1('1')
+    // lookupPokemon5('Flying')
+    lookupPokemon6('Flying')
+    lookupPokemon7('Flying')
 }))
 
 module.exports = router;
