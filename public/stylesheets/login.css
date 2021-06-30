@@ -9,13 +9,14 @@ body{
     justify-content: center;
     place-items: center;
     overflow: hidden;
+    font-family: 'Oswald', sans-serif;
 }
 
 .login-container {
     position: relative;
     top: 100px;
     width: 400px;
-    height: 600px;
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
@@ -56,12 +57,12 @@ label, input, button, textarea {
     border: none;
     outline: none;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 label {
     margin-top: 10px;
     margin-bottom: 0px;
-    font-family: arial;
     font-size: 10pt;
     letter-spacing: 1px;
 }
