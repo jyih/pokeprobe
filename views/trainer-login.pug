@@ -5,7 +5,7 @@ block content
     +validationErrorSummary(errors)
     div(class="login-container")
       div(class="dugon-logo")
-      div(class="slogan") Powered by Dugon
+      div(class="slogan") PokeProbe <br> Powered by Dugon
       form(action="/trainers/login" method="post")
         input(type="hidden" name="_csrf" value=csrfToken)
         +createFormField("email","email","Email")

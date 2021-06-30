@@ -1,5 +1,5 @@
 body{
-    background-color: #edf7ff;
+    background-color: #eef2f5;
     /* background-image: url('https://github.com/jyih/pokeprobe/raw/main/assets/images/pokeprobe-logo.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,7 @@ body{
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #edf7ff;
+    background: #eef2f5;
     box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
 }
 
@@ -37,12 +37,13 @@ body{
 }
 
 .slogan {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18pt;
+    font-size: 20pt;
     -webkit-text-fill-color: #ffcc03;
     -webkit-text-stroke-color: #386abb;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 2px;
     /* color: #ffcc03;
     text-shadow: #386abb 1px solid; */
     margin-bottom: 50px;
@@ -66,7 +67,7 @@ label {
 }
 
 input {
-    background: #edf7ff;
+    background: #eef2f5;
     padding: 10px;
     padding-left: 20px;
     height: 50px;
