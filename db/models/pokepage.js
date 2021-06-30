@@ -5,8 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     trainerId: DataTypes.INTEGER,
     fusionPokemonId: DataTypes.INTEGER
   }, {});
-  PokePage.associate = function(models) {
-    // associations can be defined here
+  PokePage.associate = function (models) {
+    PokePage.belongsTo(models.FusionPokemon, { foreignKey: 'fusionPokemonId' })
+    PokePage.belongsTo(models.Trainer, { foreignKey: 'trainerId' })
+
+    PokePage.hasMany(models.Comment, { foreignKey: 'pokePageId' })
   };
   return PokePage;
 };

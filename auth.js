@@ -3,10 +3,10 @@ const db = require("./db/models");
 const { Trainer } = db;
 
 const loginTrainer = (req, res, trainer) => {
-  // console.log(trainer)
   req.session.auth = {
     userId: trainer.id
   }
+  // console.log(req.session.auth)
 }//yay
 
 const logoutTrainer = (req, res) => {
@@ -22,7 +22,6 @@ const requireAuth = (req, res, next) => {
 
 const restoreTrainer = async (req, res, next) => {
   // console.log(req.session.auth)
-  console.log('JSessions' + req.session)
   if (req.session.auth) {
     const { userId } = req.session.auth;
     try {

@@ -6,7 +6,7 @@ const {
     handleValidationErrors,
 } = require("./utils");
 const db = require("../db/models");
-const { Trainer } = db;
+const { Trainer, Type, Pokedex } = db;
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const {
@@ -16,6 +16,16 @@ const {
     restoreTrainer
 } = require('../auth')
 // express validator necessary
+
+const {
+    lookupPokemon1,
+    lookupPokemon2,
+    lookupPokemon3,
+    lookupPokemon4,
+    lookupPokemon5,
+    lookupPokemon6,
+    lookupPokemon7,
+} = require('../queries/pokemon-lookup.js')
 
 /* GET users listing. */
 
@@ -106,7 +116,6 @@ router.get('/login',
             title: 'Let me innnnn',
             csrfToken: req.csrfToken()
         })
-        console.log(req.session.auth)
     }
 );
 
@@ -119,7 +128,6 @@ router.post('/login',
             where: { email }
         })
 
-        console.log('hit login', trainer)
         if (trainer) {
             const passwordMatch = await bcrypt.compare(password, trainer.password.toString());
             if (passwordMatch) {
@@ -142,10 +150,29 @@ router.get('/logout', asyncHandler(async (req, res, next) => {
 }))
 
 router.post('/logout', asyncHandler(async (req, res, next) => {
-    // console.log('before logout:' + req.session.auth)
     logoutTrainer(req, res);
-    // console.log('after logout:' + req.session.auth)
     res.redirect('/trainers/login');
+}))
+
+router.post('/demo-login', asyncHandler(async (req, res, next) => {
+    const demoTrainer = await Trainer.findOne({
+        where: {
+            email: 'demo@email.com'
+        }
+    })
+    loginTrainer(req, res, demoTrainer);
+    res.redirect('/')
+}))
+
+router.get('/query-test', asyncHandler(async (req, res, next) => {
+    // console.log(await lookupPokemon3('Normal'))
+    // lookupPokemon4(await lookupPokemon3('Normal'));
+
+    // lookupPokemon1('1')
+    // lookupPokemon5('Flying')
+    lookupPokemon6('Flying')
+    lookupPokemon6('Poison')
+    // lookupPokemon7('Flying')
 }))
 
 module.exports = router;
