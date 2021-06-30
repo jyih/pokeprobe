@@ -2,10 +2,10 @@ extends layout.pug
 include utils.pug
 
 block content
-    +validationErrorSummary(errors)
     div(class="signup-container")
         <img src="https://media.discordapp.net/attachments/856636315927576608/858001199876669460/9f0b8f3078363686cd5625c722e5774e.png" class="pokeprobe-logo">
         div(class="register-text") Register
+        +validationErrorSummary(errors)
         form(action="/trainers" method="post")
             input(type="hidden" name="_csrf" value=csrfToken)
             +createFormField("text","trainerName","Trainer Name")
