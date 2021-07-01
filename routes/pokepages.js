@@ -18,7 +18,8 @@ router.get('/', asyncHandler(async (req, res) => {
     res.render("pokepages/pokepages", { pokePages })
 }))
 
-router.get('/:id', asyncHandler(async (req, res) => {
+
+router.get('/:id', asyncHandler(async(req, res) => {
     const pokePage = await findFusion(req.params.id)
     // const fusionInfo = await findFusionInfo(req.params.id)
 
@@ -30,6 +31,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
     res.render("pokepages/pokepages-id", { imgUrl, nickname, description })
 }))
+
 
 
 

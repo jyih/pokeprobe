@@ -41,25 +41,45 @@ const getRecentPokePages = async(numberOfPosts) => {
 const findFusionInfo = async(pageId) => {
     const types = await Type.findAll()
     const pokePage = await PokePage.findByPk(pageId, 
-    // {
-    //    include: {
-    //        model: FusionPokemon,
-    //        include: [{
-    //             model: Pokedex,
-    //             as: 'Pokedex1',
-    //             include: Type
-    //        },
-    //        {
-    //            model: Pokedex,
-    //            as: 'Pokedex2',
-    //            include: Type
-    //        }
-    //     ]
-    //    }
-    // }
+    {
+       include: {
+           model: FusionPokemon,
+           include: [{
+                model: Pokedex,
+                as: 'Pokedex1',
+                include: [
+                    {
+                    model: Type,
+                    as: 'Type1'
+                    },
+                    {
+                    model: Type,
+                    as: 'Type2'
+                    }
+                ]
+           },
+           {
+               model: Pokedex,
+               as: 'Pokedex2',
+               include: [
+                {
+                model: Type,
+                as: 'Type1'
+                },
+                {
+                model: Type,
+                as: 'Type2'
+                }
+            ]
+           }
+        ]
+       }
+    }
     )
-    console.log(pokePage)
-    const pokedex = await Pokedex.findAll();
+    console.log(pokePage.FusionPokemon.Pokedex1)
+    //possible method is making a types array, and if the type is not null, push it into array then, reference array in pug to list types. if you want OR do w/e the hecc you want to reference the types on the page
+
+    // console.log(pokedex)
 
     const pokedexId1 = pokePage.FusionPokemon.pokedexId1
     const pokedexId2 = pokePage.FusionPokemon.pokedexId2
