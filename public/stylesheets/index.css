@@ -9,11 +9,26 @@ h1 {
 
 .navbar-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     top: 0px;
-    background-color: red;
+    background-color: rgb(223, 1, 1);
     width: 100%
-    /* left: 0px; */
+}
+
+.nav-links a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24pt;
+    -webkit-text-fill-color: #ffcc03;
+    -webkit-text-stroke-color: #386abb;
+    -webkit-text-stroke-width: 2px;
+    justify-content: flex-end;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .logo-small {
