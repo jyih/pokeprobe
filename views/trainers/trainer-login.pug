@@ -1,8 +1,13 @@
 extends ../layout.pug
 include ../utils.pug
 
+<<<<<<< HEAD:views/trainers/trainer-login.pug
 append head
     link(rel='stylesheet' href='/stylesheets/login.css')
+=======
+append head 
+    link(rel='stylesheet' href='/stylesheets/login-signup.css')
+>>>>>>> michelle-local:views/trainer-login.pug
 
 block content
     div(class="login-container")
@@ -14,6 +19,6 @@ block content
         input(type="hidden" name="_csrf" value=csrfToken)
         +createFormField("email","email","Email")
         +createFormField("password","password","Password")
-        button Login
+        button(class="login-button") Login
       form(action='/trainers/demo-login' method='post')
-        button(type='submit') Demo User
+        button(type='submit' class="login-button") Demo User

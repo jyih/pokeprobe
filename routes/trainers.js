@@ -149,9 +149,16 @@ router.post('/login',
 //     res.render('trainer-logout')
 // }))
 
+<<<<<<< HEAD
 router.get('/logout', asyncHandler(async(req, res, next) => {
     logoutTrainer(req, res);
     res.redirect('');
+=======
+router.get('/logout', asyncHandler(async (req, res, next) => {
+    logoutTrainer(req, res);
+    console.log('lol')
+    res.redirect('/trainers/login');
+>>>>>>> michelle-local
 }))
 
 router.post('/demo-login', asyncHandler(async(req, res, next) => {
