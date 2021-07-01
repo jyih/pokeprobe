@@ -1,9 +1,11 @@
 /* project skeleton starter - start */
+
 h1 {
     color: #555555;
 }
-/* project skeleton starter - end */
 
+
+/* project skeleton starter - end */
 
 .navbar-container {
     display: flex;
@@ -42,16 +44,22 @@ h1 {
 
 
 /* small shadow for small elements: input, textarea, buttons */
-.small-shadow {
+
+
+/* .small-shadow {
     padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
-}
+} */
+
 
 /* medium shadow for medium elements */
+
+
+/*
 .medium-shadow {
     padding: 0;
     border: none;
@@ -59,19 +67,26 @@ h1 {
     box-sizing: border-box;
     border-radius: 50%;
     box-shadow: 7px 7px 10px #e6eaec, -7px -7px 10px white;
-}
+} */
+
 
 /* large shadow for large elements */
-.large-shadow {
+
+
+/* .large-shadow {
     padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
     border-radius: 50%;
     box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
-}
+} */
+
 
 /* using this to test, pls don't delete */
+
+
+/*
 .make-red {
     border: 1px solid red !important;
-}
+} */

@@ -1,18 +1,18 @@
-extends layout.pug 
+extends layout.pug
 include utils.pug
 
-append head 
+append head
   script(src="/javascripts/pokemon-generate.js" type="module" defer)
   link(rel='stylesheet' href='/stylesheets/login-signup.css')
 
 
 block content
-  div 
+  div
     img(id='pokemon-random-img' src='')
   div
     button(id='pokemon-release-button') Release
   div
-    form(action='/fusion-pokemon' method='post') 
+    form(action='/fusion-pokemon' method='post')
       input(type="hidden" name="_csrf" value=csrfToken)
       input(type="hidden" name="pokedexId1" id="pokedexId1")
       input(type="hidden" name="pokedexId2" id="pokedexId2")
