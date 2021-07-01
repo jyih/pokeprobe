@@ -3,10 +3,6 @@
 body{
     background-color: #eef2f5;
     font-family: 'Oswald', sans-serif;
-    background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860182084923818004/kx84tyig6l761.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
     overflow: auto;
 }
 
@@ -14,36 +10,48 @@ body{
     color: red;
     width: 125px;
 }
+/* 
+.gameboy-container {
+    background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860182084923818004/kx84tyig6l761.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 1100px;
+    margin: auto;
+}
+*/
+
 
 .gameboy-screen-container {
     position: relative;
     margin: auto;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     border-radius: 20px;
 }
 
 .gameboy-bg {
     margin: auto;
-    margin-top: 100px;
-    height: 500px;
-    width: 500px;
+    margin-top: 40px;
+    height: 100%;
+    width: auto;
     /* border: 1px solid black; */
 }
 
 #pokemon-random-img {
     position: absolute;
-    right: 40px;
-    top: 100px;
+    right: 0px;
+    top: 50px;
+    width: 200px;
 }
 
 .wild-pokemon-name {
     position: absolute;
     font-family: 'VT323', monospace;
-    font-size: 37pt;
-    bottom: -23px;
-    left: 150px;
-    width: 321px;
+    font-size: 26pt;
+    bottom: 24px;
+    left: 114px;
+    width: 275px;
     overflow-x: hidden;
 }
 
@@ -57,13 +65,13 @@ body{
     flex-direction: column;
     align-items: center;
     margin: auto;
-    margin-top: 120px;
+    margin-top: 60px;
     height: auto;
-    width: 500px;
+    width: 400px;
     border-radius: 20px;
-    padding: 40px;
+    padding: 10px;
     background: #eef2f5;
-    /* box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white; */
+    box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
 }
 
 .catch-pokemon-form label,
@@ -108,6 +116,7 @@ body{
 
 .button-container {
     display: flex;
+    padding: 10px;
     justify-content: space-between;
 }
 
