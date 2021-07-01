@@ -2,14 +2,23 @@ doctype html
 html
   head
       block head
-        title="Express Starter App"
+        title="POKEPROBE"
         link(rel='stylesheet' href='/stylesheets/reset.css')
-        //- link(rel='stylesheet' href='/stylesheets/index.css')
+        link(rel='stylesheet' href='/stylesheets/index.css')
+        script(src="/javascripts/navbar.js" type="module")
 
         //-oswald font, regular 400
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   body
+
+    nav(class="navbar-container")
+        a(href="homepage-link-here"): img(src="" class="logo-small")
+        input(type="text" placeholder="Search..." name="search" class="search-bar-spot")
+        button(class="mag-icon"): i(class="fa fa-search")
+        button(id="logout-button") logout
+
     block content

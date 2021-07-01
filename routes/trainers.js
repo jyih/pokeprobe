@@ -145,12 +145,13 @@ router.post('/login',
     })
 )
 
-router.get('/logout', asyncHandler(async (req, res, next) => {
-    res.render('trainer-logout')
-}))
+// router.get('/logout', asyncHandler(async (req, res, next) => {
+//     res.render('trainer-logout')
+// }))
 
-router.post('/logout', asyncHandler(async (req, res, next) => {
+router.get('/logout', asyncHandler(async (req, res, next) => {
     logoutTrainer(req, res);
+    console.log('lol')
     res.redirect('/trainers/login');
 }))
 
