@@ -31,6 +31,9 @@ router.get('/:id', asyncHandler(async(req, res) => {
     res.render("pokepages/pokepages-id", { imgUrl, nickname, description })
 }))
 
+router.get('/edit/:id', asyncHandler(async(req, res) => {
+
+}))
 
 
 module.exports = router
