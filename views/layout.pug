@@ -16,23 +16,17 @@ html
   body
 
     nav(class="navbar-container")
-        a(href="/"): img(src='assets/images/dugon.png' class="logo-small")
+      div(class="nav-links")
+        a(href="/"): img(src='/images/dugon.png' class="logo-small")
         input(type="text" placeholder="Search..." name="search" class="search-bar-spot")
         button(class="mag-icon"): i(class="fa fa-search")
       div(class="nav-links")
+        if locals.authenticated
           a(href="/fusion-pokemon") Catch
-          //- if locals.authenticated
-          //-   button(id="logout-button") Logout
-          //- else
-          //-   button(id="login-button") Login
-
-          if locals.authenticated
-            //- span(class='') Welcome #{trainer.firstName}!
-            //- form(action='/trainers/logout' method='get')
-            a(href='/trainers/logout') Logout
-          else
-            span()
-              a(href='/trainers/login') Login
-              a(href='/trainers/signup') Register
+          a(href='/trainers/logout') Logout
+        else
+          span()
+            a(href='/trainers/login') Login
+            a(href='/trainers/signup') Register
 
   block content
