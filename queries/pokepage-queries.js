@@ -22,9 +22,23 @@ const findFusion = async(pageId) => {
     return pokePage
 }
 
+const getRecentPokePages = async(numberOfPosts) => {
+    const pokePages = await PokePage.findAll({
+        order: [
+            [
+                'id', 'DESC'
+            ]
+        ],
+        limit: numberOfPosts
+
+    })
+    return pokePages
+}
+
 
 module.exports = {
     findAllPokePages,
+    getRecentPokePages,
     // findPokePageById,
     findFusion
 }

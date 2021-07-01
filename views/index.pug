@@ -1,5 +1,10 @@
-extends layout
+extends ../layout
 block content
+  div
+    ul
+      each recentPage in recentPages
+        li= recentPage.fusionPokemonId
+
 
 //- append head
 //-   //- add page specific styles by appending to the head
