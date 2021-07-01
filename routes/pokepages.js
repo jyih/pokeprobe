@@ -19,16 +19,15 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 
-router.get('/test', asyncHandler(async (req, res) => {
+router.get('/test', asyncHandler(async(req, res) => {
     const pokedex = await Pokedex.findByPk(2, {
-        include: [
-            {
-            model: Type,
-            as: 'Type1'
+        include: [{
+                model: Type,
+                as: 'Type1'
             },
             {
-            model: Type,
-            as: 'Type2'
+                model: Type,
+                as: 'Type2'
             }
         ]
     });
@@ -41,45 +40,66 @@ router.get('/test', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async(req, res) => {
     const pokePage = await findFusion(req.params.id)
-    const fusionInfo = await findFusionInfo(req.params.id)
-    console.log(fusionInfo)
+        // const fusionInfo = await findFusionInfo(req.params.id)
+        // console.log(fusionInfo)
     const nickname = pokePage.FusionPokemon.nickname
     const description = pokePage.FusionPokemon.description
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
+    const content = pokePage.content
         // also get names from pokedex
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
-    res.render("pokepages/pokepages-id", { imgUrl, nickname, description })
+    res.render("pokepages/pokepages-id", { imgUrl, nickname, description, content })
 }))
 
 router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async(req, res) => {
     const pokemonId = req.params.id
-    const pokePage = await PokePage.findByPk(pokemonId)
-    res.render('pokepages-edit', { pokePage, csrfToken: req.csrfToken() })
+    const pokePage = await findFusion(pokemonId)
+    const id1 = pokePage.FusionPokemon.pokedexId1
+    const id2 = pokePage.FusionPokemon.pokedexId2
+    const name = pokePage.FusionPokemon.nickname
+    const currentDescription = pokePage.FusionPokemon.description
+    const currentContent = pokePage.content
+    console.log(currentContent)
+
+    const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
+    res.render('pokepages/pokepages-edit', { pokePage, imgUrl, name, pokemonId, currentDescription, currentContent, csrfToken: req.csrfToken() })
 }))
+
 router.post('/edit/:id(\\d+)', csrfProtection, asyncHandler(async(req, res) => {
     const pokemonId = req.params.id
-    const pokePageToUpdate = await PokePage.findByPk(pokemonId)
-
+    const pokePageToUpdate = await findFusion(pokemonId)
+        // const fusionInfo = await findFusionInfo(req.params.id)
+        // console.log(fusionInfo)
+    const nickname = pokePageToUpdate.FusionPokemon.nickname
+    const description = pokePageToUpdate.FusionPokemon.description
+    const id1 = pokePageToUpdate.FusionPokemon.pokedexId1
+    const id2 = pokePageToUpdate.FusionPokemon.pokedexId2
+        // also get names from pokedex
+    const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
+    console.log('post successful')
     const {
         content,
     } = req.body
 
 
+    await pokePageToUpdate.update({ content })
 
-    await pokePageToUpdate.update({})
+    res.render(`pokepages/pokepages-id`, { imgUrl, nickname, description, content })
+
 }))
 
 
 
 router.get('/delete/:id(\\d+)', asyncHandler(async(req, res) => {
-
+    const pokemonId = req.params.id
+    const pokePageToDelete = await findFusion(pokemonId)
+    const pokemon = pokePageToDelete.FusionPokemon
+    pokePageToDelete.destroy()
+    pokemon.destroy()
+    res.redirect("/")
 }))
 
 
-<<<<<<< HEAD
-module.exports = router
-=======
 
 module.exports = router
->>>>>>> levi-local
