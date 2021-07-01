@@ -8,7 +8,7 @@ const {
 const db = require("../db/models");
 const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
-const { findAllPokePages, findPokePageById, findFusion } = require("../queries/pokepage-queries")
+const { findAllPokePages, findFusion } = require("../queries/pokepage-queries")
 
 
 

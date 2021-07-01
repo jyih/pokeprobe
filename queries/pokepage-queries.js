@@ -25,6 +25,6 @@ const findFusion = async(pageId) => {
 
 module.exports = {
     findAllPokePages,
-    findPokePageById,
+    // findPokePageById,
     findFusion
 }
