@@ -1,0 +1,47 @@
+body{
+    background-color: #eef2f5;
+    font-family: 'Oswald', sans-serif;
+    overflow: auto;
+}
+
+.gameboy-container {
+    position: relative;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+}
+
+.gameboy-bg {
+    margin: auto;
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
+    /* border: 1px solid black; */
+}
+
+#pokemon-random-img {
+    position: absolute;
+    right: 40px;
+    top: 100px;
+}
+
+.pokemon-generate-form-container {
+    margin: auto;
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
+
+}
+
+.release-button-container {
+}
+
+.release-button {
+    margin: auto;
+    position: static;
+    text-align: center;
+    background-color: red;
+    color: white;
+    height: 50px;
+    width: 400px;
+}

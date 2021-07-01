@@ -3,21 +3,54 @@ include utils.pug
 
 append head
   script(src="/javascripts/pokemon-generate.js" type="module" defer)
-  link(rel='stylesheet' href='/stylesheets/login-signup.css')
+  link(rel='stylesheet' href='/stylesheets/pokemon-generate.css')
 
 
 block content
-  div
-    img(id='pokemon-random-img' src='')
-  div
-    button(id='pokemon-release-button') Release
-  div
-    form(action='/fusion-pokemon' method='post')
-      input(type="hidden" name="_csrf" value=csrfToken)
-      input(type="hidden" name="pokedexId1" id="pokedexId1")
-      input(type="hidden" name="pokedexId2" id="pokedexId2")
-      +createFormField('text','nickname','Nickname')
-      label(for="description") Description
-      textarea(name="description")
-      div
-        button(id='pokemon-catch-button') Catch
+  div(class="pokemon-generate-container")
+    div(class="gameboy-container")
+      img(id='pokemon-random-img' src='')
+      img(src="https://cdn.discordapp.com/attachments/844272548044472351/859974478553546782/IMG_9888.JPG" class="gameboy-bg")
+
+  div(class="pokemon-generate-form-container")
+    div(class="release-button-container")
+      button(id='pokemon-release-button' class="release-button") Release
+    div
+      form(action='/fusion-pokemon' method='post')
+        input(type="hidden" name="_csrf" value=csrfToken)
+        input(type="hidden" name="pokedexId1" id="pokedexId1")
+        input(type="hidden" name="pokedexId2" id="pokedexId2")
+        +createFormField('text','nickname','Nickname')
+        label(for="description") Description
+        textarea(name="description")
+        div
+          button(id='pokemon-catch-button') Catch
+
+
+
+
+
+
+
+
+
+
+
+//- this is here incase i break the form above so i can just revert back:
+
+//- block content
+//-   div(class="pokemon-generate-container")
+//-     div
+//-       img(id='pokemon-random-img' src='')
+//-     div
+//-       button(id='pokemon-release-button') Release
+//-     div
+//-       form(action='/fusion-pokemon' method='post')
+//-         input(type="hidden" name="_csrf" value=csrfToken)
+//-         input(type="hidden" name="pokedexId1" id="pokedexId1")
+//-         input(type="hidden" name="pokedexId2" id="pokedexId2")
+//-         +createFormField('text','nickname','Nickname')
+//-         label(for="description") Description
+//-         textarea(name="description")
+//-         div
+//-           button(id='pokemon-catch-button') Catch
