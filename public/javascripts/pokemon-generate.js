@@ -41,6 +41,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         fusionData = generateFusionData();
     })
 
+    const pokeNameDiv = document.querySelector('.wild-pokemon-name');
+    const nicknameInput = document.querySelector('.nickname-input');
+
+    nicknameInput.addEventListener('keyup', (event) => {
+        pokeNameDiv.innerHTML = nicknameInput.value
+    })
+
     catchButton.addEventListener('click', (event) => {
         const pokedexId1 = document.getElementById('pokedexId1')
         const pokedexId2 = document.getElementById('pokedexId2')

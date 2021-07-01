@@ -1,4 +1,4 @@
-mixin createFormField(inputType,name,label,value='', placeholder=label, classes='')
+mixin createFormField(inputType,name,label,value='', classes='', placeholder=label)
     div(class='form-div')
         label(for=name)= label
         input(type=inputType name=name value=value placeholder=placeholder class=classes)

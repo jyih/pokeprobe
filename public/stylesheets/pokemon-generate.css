@@ -25,6 +25,18 @@ body{
     top: 100px;
 }
 
+.pokemon-generate-container {
+    position: relative;
+}
+
+.wild-pokemon-name {
+    position: absolute;
+    background-color: lightblue;
+    font-size: 24pt;
+    bottom: -16px;
+    left: 150px;
+}
+
 .pokemon-generate-form-container {
     margin: auto;
     margin-top: 100px;
@@ -32,9 +44,10 @@ body{
     width: 500px;
 
 }
-
+/*
 .release-button-container {
-}
+
+} */
 
 .release-button {
     margin: auto;
