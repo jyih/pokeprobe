@@ -40,31 +40,61 @@ const getRecentPokePages = async(numberOfPosts) => {
 
 const findFusionInfo = async(pageId) => {
     const types = await Type.findAll()
-    const pokePage = await PokePage.findByPk(pageId, 
-    // {
-    //    include: {
-    //        model: FusionPokemon,
-    //        include: [{
-    //             model: Pokedex,
-    //             as: 'Pokedex1',
-    //             include: Type
-    //        },
-    //        {
-    //            model: Pokedex,
-    //            as: 'Pokedex2',
-    //            include: Type
-    //        }
-    //     ]
-    //    }
-    // }
+    const pokePage = await PokePage.findByPk(pageId,
+    {
+       include: {
+           model: FusionPokemon,
+           include: [{
+                model: Pokedex,
+                as: 'Pokedex1',
+                include: [
+                    {
+                    model: Type,
+                    as: 'Type1'
+                    },
+                    {
+                    model: Type,
+                    as: 'Type2'
+                    }
+                ]
+           },
+           {
+               model: Pokedex,
+               as: 'Pokedex2',
+               include: [
+                {
+                model: Type,
+                as: 'Type1'
+                },
+                {
+                model: Type,
+                as: 'Type2'
+                }
+            ]
+           }
+        ]
+       }
+    }
     )
-    console.log(pokePage)
-    const pokedex = await Pokedex.findAll();
+    // console.log(pokePage.FusionPokemon.Pokedex1.Type1)
+    // console.log(pokePage.FusionPokemon.Pokedex2)
+    //possible method is making a types array, and if the type is not null, push it into array then, reference array in pug to list types. if you want OR do w/e the hecc you want to reference the types on the page
 
-    const pokedexId1 = pokePage.FusionPokemon.pokedexId1
-    const pokedexId2 = pokePage.FusionPokemon.pokedexId2
 
-    pokePage.pokemon1Types = types[pokePage.FusionPokemon.pokedexId1]
+    const pokedexId1Type1 = pokePage.FusionPokemon.Pokedex1.Type1
+    // const pokedexId1Type2 = pokePage.FusionPokemon.Pokedex1.Type2
+    console.log('bye')
+    console.log(pokedexId1Type1)
+    // const pokedexId2Type1 = pokePage.FusionPokemon.pokedexId2.Type1
+    // const pokedexId2Type2 = pokePage.FusionPokemon.pokedexId2.Type2
+
+    // let typesArr = [pokedexId1Type1, pokedexId1Type2, pokedexId2Type1, pokedexId2Type2];
+    // fusionPokemonTypes = typesArr.map(type => {
+    //     if(type !== null) {
+    //         return type;
+    //     }
+    // })
+
 }
 
 module.exports = {
