@@ -1,6 +1,5 @@
 body{
     background-color: #eef2f5;
-    overflow: hidden;
     font-family: 'Oswald', sans-serif;
     overflow: auto;
 }
@@ -17,11 +16,11 @@ body{
     margin-left: 50px;
 }
 
-label,
-input,
+.login-form label,
+.login-form input,
 .login-button,
 .demo-button,
-textarea {
+.login-form textarea {
     display: block;
     width: 100%;
     padding: 0;
@@ -31,14 +30,14 @@ textarea {
     font-family: 'Oswald', sans-serif;
 }
 
-label {
+.login-form label {
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 10pt;
     letter-spacing: 1px;
 }
 
-input {
+.login-form input {
     background: #eef2f5;
     padding: 10px;
     padding-left: 20px;
@@ -60,8 +59,6 @@ input {
     box-shadow: 6px 6px 6px #e6eaec, -6px -6px 6px white;
     transition: 0.7s;
 }
-
-/* LOG-IN */
 
 .login-container {
     margin: auto;
