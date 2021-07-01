@@ -1,7 +1,28 @@
 extends ../layout.pug
 
+append head
+    link(rel='stylesheet' href='/stylesheets/pokepages-id.css')
+
 block content
     div
         img(src= imgUrl)
         h2=nickname
         h2=description
+        h3=content
+
+    div(class="container")
+        div(class="fusion-img-container")
+            img(src= imgUrl)
+
+        div(class="type-container")
+            ul Types
+                each types in fusionPokemonTypes
+                    li(class="type")= types
+
+        div(class="nickname-container")
+            h2(class="nickname")=nickname
+
+        div(class="description-container")
+            h3 Description
+            h2(class="description")=description
+
