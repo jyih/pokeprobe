@@ -11,17 +11,17 @@ block content
             //- th Nickname
             //- th Edit / Delete
 
-
         tbody
          each recentPage in recentPages
-            tr(href='/trainers/signup')
+            tr
               td
-                img(src= `https://images.alexonsager.net/pokemon/fused/${recentPage.FusionPokemon.pokedexId1}/${recentPage.FusionPokemon.pokedexId1}.${recentPage.FusionPokemon.pokedexId2}.png`)
+                a(href=`/pokepages/${recentPage.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${recentPage.FusionPokemon.pokedexId1}/${recentPage.FusionPokemon.pokedexId1}.${recentPage.FusionPokemon.pokedexId2}.png`)
               td= recentPage.Trainer.username
-              td= recentPage.FusionPokemon.nickname
+              td: a(href=`/pokepages/${recentPage.id}`)= recentPage.FusionPokemon.nickname
               td
-                a(href=`/pokepages/edit/${recentPage.id}` role='button' class= 'edit-button') Edit
-                a(href=`/pokepages/delete/${recentPage.id}` role='button' class= 'delete-button') - Delete
+                if locals.trainer.id === recentPage.trainerId
+                 a(href=`/pokepages/edit/${recentPage.id}` role='button' class='edit-button') Edit
+                 a(href=`/pokepages/delete/${recentPage.id}` role='button' class='delete-button') Delete
 
 
 

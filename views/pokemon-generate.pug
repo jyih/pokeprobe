@@ -16,13 +16,17 @@ block content
       div(class="error")
       form(action='/fusion-pokemon' method='post' class="catch-pokemon-form")
         input(type="hidden" name="_csrf" value=csrfToken)
+        input(type="hidden" id="authenticator" value=locals.authenticated)
         input(type="hidden" name="pokedexId1" id="pokedexId1")
         input(type="hidden" name="pokedexId2" id="pokedexId2")
         +createFormField('text','nickname','Nickname', null, 'nickname-input')
         label(for="description") Description
         textarea(name="description" rows="5")
         div(class="button-container")
-          button(type="submit" id='pokemon-catch-button' class="catch-button") Catch
+          if locals.authenticated
+            button(type="submit" id='pokemon-catch-button' class="catch-button") Catch
+          else
+            div(class="please-login") You must be logged in to catch Pokemon
           button(type="button" id='pokemon-release-button' class="release-button") Run Away
 
 
