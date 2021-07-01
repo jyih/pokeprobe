@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body{
     background-color: #eef2f5;
     font-family: 'Oswald', sans-serif;
@@ -24,37 +26,75 @@ body{
     right: 40px;
     top: 100px;
 }
-
+/*
 .pokemon-generate-container {
     position: relative;
-}
+} */
 
 .wild-pokemon-name {
     position: absolute;
-    background-color: lightblue;
-    font-size: 24pt;
-    bottom: -16px;
+    font-family: 'VT323', monospace;
+    font-size: 33pt;
+    bottom: -19px;
     left: 150px;
+    width: 321px;
+    overflow-x: hidden;
 }
 
 .pokemon-generate-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 120px;
     height: 500px;
     width: 500px;
-
 }
-/*
-.release-button-container {
 
-} */
+.catch-pokemon-form input,
+.catch-pokemon-form textarea {
+    margin: 10px;
+    margin-top: 2px;
+    padding: 5px;
+    width: 300px;
+}
+
+.catch-pokemon-form textarea {
+    resize: none;
+}
+
+.catch-pokemon-form label {
+    display: block;
+    font-size: 14pt;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catch-button {
+    margin: auto;
+    position: static;
+    text-align: center;
+    background-color: rgb(145, 145, 255);
+    color: black;
+    height: 50px;
+    width: 100px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+}
 
 .release-button {
     margin: auto;
     position: static;
     text-align: center;
-    background-color: red;
-    color: white;
+    background-color: rgb(247, 183, 183);
+    color: black;
     height: 50px;
-    width: 400px;
+    width: 100px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
 }
