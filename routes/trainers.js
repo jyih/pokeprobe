@@ -98,7 +98,7 @@ router.post(
                 bio,
                 password: hashedPassword,
             });
-            res.json({ trainer });
+            loginTrainer(req, res, trainer);
             res.redirect('/')
         } else {
             res.render('trainers/trainer-signup', {
@@ -149,7 +149,7 @@ router.post('/login',
 //     res.render('trainer-logout')
 // }))
 
-router.get('/logout', asyncHandler(async (req, res, next) => {
+router.get('/logout', asyncHandler(async(req, res, next) => {
     logoutTrainer(req, res);
     res.redirect('/trainers/login');
 }))
