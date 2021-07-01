@@ -49,14 +49,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
     catchButton.addEventListener('click', (event) => {
+        const error = document.querySelector('.error')
+
         if (nicknameInput.value.length > 20) {
             event.preventDefault()
-            const error = document.querySelector('.error')
             error.innerHTML = 'Pokemon nickname must be fewer than 20 characters.'
         }
+
+        if (nicknameInput.value.length <= 0) {
+            event.preventDefault();
+            error.innerHTML = 'You must provide a name for your pokemon. You wouldn\'t forget to name your own child, would you?'
+        }
+
         const pokedexId1 = document.getElementById('pokedexId1')
         const pokedexId2 = document.getElementById('pokedexId2')
-
+        
         pokedexId1.value = fusionData.id1
         pokedexId2.value = fusionData.id2
     })
