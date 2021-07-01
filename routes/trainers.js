@@ -76,7 +76,7 @@ router.get(
     "/signup",
     csrfProtection,
     asyncHandler(async(req, res) => {
-        res.render("trainer-signup", { csrfToken: req.csrfToken() });
+        res.render("trainers/trainer-signup", { csrfToken: req.csrfToken() });
     })
 );
 
@@ -101,7 +101,7 @@ router.post(
             res.json({ trainer });
             res.redirect('/')
         } else {
-            res.render('trainer-signup', {
+            res.render('trainers/trainer-signup', {
                 errors: req.errors,
                 csrfToken: req.csrfToken()
             })
@@ -112,7 +112,7 @@ router.post(
 router.get('/login',
     csrfProtection,
     (req, res, ) => {
-        res.render('trainer-login', {
+        res.render('trainers/trainer-login', {
             title: 'Let me innnnn',
             csrfToken: req.csrfToken()
         })
@@ -137,7 +137,7 @@ router.post('/login',
         } else {
             // let errorMsg = 'Login credentials failed to match an existing user.'
             req.errors = ['Login credentials failed to match an existing user.'];
-            res.render('trainer-login', {
+            res.render('trainers/trainer-login', {
                 errors: req.errors,
                 csrfToken: req.csrfToken()
             })
