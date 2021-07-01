@@ -1,0 +1,23 @@
+extends ../layout.pug
+include ../utils.pug
+
+block content
+    div
+        img(src= imgUrl)
+    div
+        p= name
+    div
+        p Current Description:
+        p= currentDescription
+        p -----------------
+    div
+        p Current Content:
+        p= currentContent
+        p -----------------
+    div
+        form(action= `/pokepages/edit/${pokemonId}`, method='post')
+            label Update Content
+            div
+                input(type="hidden" name="_csrf" value=csrfToken)
+                textarea(name="content")
+                button Submit
