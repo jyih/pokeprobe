@@ -1,5 +1,6 @@
 body{
     background-color: #eef2f5;
+    overflow: hidden;
     font-family: 'Oswald', sans-serif;
     overflow: auto;
 }
@@ -16,11 +17,11 @@ body{
     margin-left: 50px;
 }
 
-.login-form label,
-.login-form input,
+label,
+input,
 .login-button,
-.signup-button,
-.login-form textarea {
+.demo-button,
+textarea {
     display: block;
     width: 100%;
     padding: 0;
@@ -30,14 +31,14 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-.login-form label {
+label {
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 10pt;
     letter-spacing: 1px;
 }
 
-.login-form input {
+input {
     background: #eef2f5;
     padding: 10px;
     padding-left: 20px;
@@ -50,7 +51,7 @@ body{
 }
 
 .login-button,
-.signup-button {
+.demo-button {
     margin-top: 10px;
     background: #ffcc03;
     border: #386abb 3px solid;
@@ -59,6 +60,8 @@ body{
     box-shadow: 6px 6px 6px #e6eaec, -6px -6px 6px white;
     transition: 0.7s;
 }
+
+/* LOG-IN */
 
 .login-container {
     margin: auto;
@@ -76,6 +79,7 @@ body{
     height: 150px;
     width: 150px;
     background: url('https://cdn.discordapp.com/attachments/856636315927576608/859574573070680084/137.51.png');
+    /* background: url('/assets/images/dugon.png'); */
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
@@ -105,54 +109,4 @@ body{
     -webkit-text-stroke-color: #386abb;
     -webkit-text-stroke-width: 2px;
     margin-bottom: 50px;
-}
-
-.signup-container {
-    margin: auto;
-    margin-top: 50px;
-    width: 500px;
-    height: auto;
-    border-radius: 20px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #eef2f5;
-    box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white;
-    overflow: auto;
-}
-
-.pokeprobe-logo {
-    position: relative;
-    display: block;
-    align-items: center;
-    width: 400px;
-    height: auto;
-    margin: auto;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.register-text {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 20pt;
-    -webkit-text-fill-color: #ffcc03;
-    -webkit-text-stroke-color: #386abb;
-    -webkit-text-stroke-width: 2px;
-    margin-bottom: 20px;
-}
-
-.bio-input {
-    background: #eef2f5;
-    padding: 10px;
-    padding-left: 20px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 50px;
-    box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
-    transition: 0.7s;
-    margin-top: 5px;
-    resize: none;
-    height: 100px;
-    overflow: hidden;
 }

@@ -3,11 +3,11 @@ include utils.pug
 
 append head
   script(src="/javascripts/pokemon-generate.js" type="module" defer)
-  link(rel='stylesheet' href='/stylesheets/login-signup.css')
+  link(rel='stylesheet' href='/stylesheets/pokemon-generate.css')
 
 
 block content
-  div
+  div(class="pokemon-generate-container")
     img(id='pokemon-random-img' src='')
   div
     button(id='pokemon-release-button') Release
