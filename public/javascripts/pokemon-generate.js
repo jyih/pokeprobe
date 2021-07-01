@@ -49,6 +49,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
     catchButton.addEventListener('click', (event) => {
+        if (nicknameInput.value.length > 20) {
+            event.preventDefault()
+            const error = document.querySelector('.error')
+            error.innerHTML = 'Pokemon nickname must be fewer than 20 characters.'
+        }
         const pokedexId1 = document.getElementById('pokedexId1')
         const pokedexId2 = document.getElementById('pokedexId2')
 
