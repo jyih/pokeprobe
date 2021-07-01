@@ -7,22 +7,13 @@ h1 {
 
 /* project skeleton starter - end */
 
-<<<<<<< HEAD
-=======
-
->>>>>>> michelle-local
 .navbar-container {
     display: flex;
     justify-content: flex-start;
     top: 0px;
     background-color: red;
-<<<<<<< HEAD
-    width: 100%;
-    left: 0px;
-=======
     width: 100%
     /* left: 0px; */
->>>>>>> michelle-local
 }
 
 .logo-small {
