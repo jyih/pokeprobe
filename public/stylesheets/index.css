@@ -4,6 +4,11 @@ h1 {
     color: #555555;
 }
 
+body{
+    background-color: #eef2f5;
+    font-family: 'Oswald', sans-serif;
+    overflow: auto;
+}
 
 /* project skeleton starter - end */
 
@@ -11,7 +16,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     top: 0px;
-    background-color: rgb(223, 1, 1);
+    /* background-color: rgb(223, 1, 1); */
+    background-color: orangered;
     width: 100%
 }
 
@@ -30,6 +36,7 @@ h1 {
     display: flex;
     align-items: center;
 }
+
 
 .logo-small {
     width: 50px;
@@ -56,6 +63,134 @@ h1 {
     width: 100px;
     height: auto;
 }
+
+/* idk man ^^^ */
+
+
+.table-container {
+    margin: auto;
+    width: 800px;
+    background-color: rgb(245, 245, 234);
+    margin-top: 20px;
+    box-shadow: 0px 0px 20px 0px  #5E855A;
+}
+
+table,
+.table-data a {
+    grid-template-columns: 240px repeat(2fr,2) 1fr;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+.table-data a{
+    color: #710420;
+    font-style: oblique;
+}
+
+table img {
+    max-height: 220px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px  #853A2E;
+}
+
+tr.table-header {
+    height: 42px;
+}
+
+.table-data a:hover {
+    text-decoration: blueviolet;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2pt;
+    font-style: normal;
+    color: seagreen
+    /* mi ookuemon oikachu */
+}
+
+.table-row {
+    height: 260px;
+    border: 1px solid rgb(150,150,150);
+}
+
+/* .table-data,
+.table-data a {
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 14pt;
+} */
+
+#edit-button,
+#delete-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: auto;
+    position: relative;
+    text-align: center;
+    background-color: rgb(145, 145, 255);
+    color: black;
+    height: 50px;
+    width: 100px;
+
+    text-decoration: none;
+    font-style: normal;
+}
+
+#delete-button {
+    background-color: rgb(247, 183, 183);
+}
+
+/* .button-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#edit-button,
+#delete-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: auto;
+    position: relative;
+    text-align: center;
+    background-color: rgb(145, 145, 255);
+    color: black;
+    height: 50px;
+    width: 100px;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 14;
+}
+
+#delete-button {
+    background-color: rgb(247, 183, 183);
+}
+
+table {
+    margin-left: 1em;
+    border-collapse: collapse;
+}
+
+
+.table-row {
+    border: 1px solid rgb(150,150,150);
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+} */
 
 
 /* small shadow for small elements: input, textarea, buttons */
