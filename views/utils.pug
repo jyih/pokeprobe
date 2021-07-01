@@ -1,7 +1,7 @@
-mixin createFormField(inputType,name,label,value='', placeholder=label)
+mixin createFormField(inputType,name,label,value='', placeholder=label, classes='')
     div(class='form-div')
         label(for=name)= label
-        input(type=inputType name=name value=value placeholder=placeholder)
+        input(type=inputType name=name value=value placeholder=placeholder class=classes)
 
 mixin validationErrorSummary(errors)
     if errors
