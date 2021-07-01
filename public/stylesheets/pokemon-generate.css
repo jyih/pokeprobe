@@ -3,14 +3,25 @@
 body{
     background-color: #eef2f5;
     font-family: 'Oswald', sans-serif;
+    background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860182084923818004/kx84tyig6l761.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     overflow: auto;
 }
-
+/*
 .gameboy-container {
+    background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860185547782750218/5a6a3becab538104d4a30e2c_2.png');
+    background-repeat: no-repeat;
+    background-size: 800px;
+} */
+
+.gameboy-screen-container {
     position: relative;
     margin: auto;
     height: 500px;
     width: 500px;
+    border-radius: 20px;
 }
 
 .gameboy-bg {
@@ -26,19 +37,20 @@ body{
     right: 40px;
     top: 100px;
 }
-/*
-.pokemon-generate-container {
-    position: relative;
-} */
 
 .wild-pokemon-name {
     position: absolute;
     font-family: 'VT323', monospace;
-    font-size: 33pt;
-    bottom: -19px;
+    font-size: 37pt;
+    bottom: -23px;
     left: 150px;
     width: 321px;
     overflow-x: hidden;
+}
+
+.error {
+    color: red;
+    margin-bottom: 5px;
 }
 
 .pokemon-generate-form-container {
@@ -47,25 +59,52 @@ body{
     align-items: center;
     margin: auto;
     margin-top: 120px;
-    height: 500px;
+    height: auto;
     width: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    background: #eef2f5;
+    /* box-shadow: 14px 14px 20px #e6eaec, -14px -14px 20px white; */
+}
+
+.catch-pokemon-form label,
+.catch-pokemon-form input,
+.catch-pokemon-form textarea {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 .catch-pokemon-form input,
 .catch-pokemon-form textarea {
     margin: 10px;
     margin-top: 2px;
-    padding: 5px;
-    width: 300px;
+    width: 350px;
+    background: #eef2f5;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
+    transition: 0.7s;
+    margin-top: 5px;
 }
 
 .catch-pokemon-form textarea {
     resize: none;
+    height: 100px;
+    overflow: hidden;
 }
 
 .catch-pokemon-form label {
     display: block;
     font-size: 14pt;
+    letter-spacing: 1px;
 }
 
 .button-container {

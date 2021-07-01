@@ -16,9 +16,24 @@ html
   body
 
     nav(class="navbar-container")
+      div(class="nav-bar-leftside")
         a(href="homepage-link-here"): img(src="" class="logo-small")
         input(type="text" placeholder="Search..." name="search" class="search-bar-spot")
         button(class="mag-icon"): i(class="fa fa-search")
-        button(id="logout-button") logout
+      div(class="nav-links")
+          a(href="/fusion-pokemon") Catch
+          //- if locals.authenticated
+          //-   button(id="logout-button") Logout
+          //- else
+          //-   button(id="login-button") Login
 
-    block content
+          if locals.authenticated
+            //- span(class='') Welcome #{trainer.firstName}!
+            //- form(action='/trainers/logout' method='get')
+            a(href='/trainers/logout') Logout
+          else
+            span()
+              a(href='/trainers/login') Login
+              a(href='/trainers/signup') Register
+
+  block content

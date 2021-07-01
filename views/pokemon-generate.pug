@@ -7,23 +7,23 @@ append head
 
 
 block content
-  div(class="pokemon-generate-container")
-    div(class="gameboy-container")
+  div(class="gameboy-container")
+    div(class="gameboy-screen-container")
       div(class="wild-pokemon-name") ???
       img(id='pokemon-random-img' src='')
       img(src="https://cdn.discordapp.com/attachments/844272548044472351/859974478553546782/IMG_9888.JPG" class="gameboy-bg")
-
-  div(class="pokemon-generate-form-container")
-    form(action='/fusion-pokemon' method='post' class="catch-pokemon-form")
-      input(type="hidden" name="_csrf" value=csrfToken)
-      input(type="hidden" name="pokedexId1" id="pokedexId1")
-      input(type="hidden" name="pokedexId2" id="pokedexId2")
-      +createFormField('text','nickname','Nickname', null, 'nickname-input')
-      label(for="description") Description
-      textarea(name="description" rows="5")
-      div(class="button-container")
-        button(type="submit" id='pokemon-catch-button' class="catch-button") Catch
-        button(type="button" id='pokemon-release-button' class="release-button") Release
+    div(class="pokemon-generate-form-container")
+      div(class="error")
+      form(action='/fusion-pokemon' method='post' class="catch-pokemon-form")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        input(type="hidden" name="pokedexId1" id="pokedexId1")
+        input(type="hidden" name="pokedexId2" id="pokedexId2")
+        +createFormField('text','nickname','Nickname', null, 'nickname-input')
+        label(for="description") Description
+        textarea(name="description" rows="5")
+        div(class="button-container")
+          button(type="submit" id='pokemon-catch-button' class="catch-button") Catch
+          button(type="button" id='pokemon-release-button' class="release-button") Run Away
 
 
 
