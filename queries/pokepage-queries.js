@@ -22,9 +22,39 @@ const findFusion = async(pageId) => {
     return pokePage
 }
 
+const findFusionInfo = async(pageId) => {
+    const types = await Type.findAll()
 
+    const pokePage = await PokePage.findByPk(pageId, 
+    // {
+    //    include: {
+    //        model: FusionPokemon,
+    //        include: [{
+    //             model: Pokedex,
+    //             as: 'Pokedex1',
+    //             include: Type
+    //        },
+    //        {
+    //            model: Pokedex,
+    //            as: 'Pokedex2',
+    //            include: Type
+    //        }
+    //     ]
+    //    }
+    // }
+    )
+    console.log(pokePage)
+    const pokedex = await Pokedex.findAll();
+
+    const pokedexId1 = pokePage.FusionPokemon.pokedexId1
+    const pokedexId2 = pokePage.FusionPokemon.pokedexId2
+
+
+    pokePage.pokemon1Types = types[pokePage.FusionPokemon.pokedexId1]
+}
 module.exports = {
     findAllPokePages,
     // findPokePageById,
-    findFusion
+    findFusion,
+    findFusionInfo
 }
