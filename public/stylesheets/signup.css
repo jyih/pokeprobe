@@ -22,7 +22,6 @@ body{
 .signup-form textarea {
     display: block;
     width: 100%;
-    padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
@@ -95,11 +94,11 @@ body{
 
 .bio-input {
     background: #eef2f5;
-    padding: 10px;
-    padding-left: 20px;
-    height: 50px;
+    padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 20px;
     font-size: 14px;
-    border-radius: 50px;
+    border-radius: 20px;
     box-shadow: inset 6px 6px 6px #e6eaec, inset -6px -6px 6px white;
     transition: 0.7s;
     margin-top: 5px;
