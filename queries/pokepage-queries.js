@@ -1,5 +1,5 @@
 const db = require('../db/models');
-const { Type, Pokedex, PokePage, FusionPokemon } = db
+const { Type, Pokedex, PokePage, FusionPokemon, Trainer } = db
 const { Op } = require('sequelize');
 
 const findAllPokePages = async() => {
@@ -29,8 +29,11 @@ const getRecentPokePages = async(numberOfPosts) => {
                 'id', 'DESC'
             ]
         ],
-        limit: numberOfPosts
-
+        limit: numberOfPosts,
+        include: [
+            Trainer,
+            FusionPokemon
+        ]
     })
     return pokePages
 }

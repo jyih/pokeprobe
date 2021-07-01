@@ -1,9 +1,30 @@
-extends ../layout
+extends layout
+
 block content
   div
     ul
-      each recentPage in recentPages
-        li= recentPage.fusionPokemonId
+      table
+        thead
+          tr
+            th Image Id 1
+            th Image Id 2
+            th Trainer Name
+            th Nickname
+            th Edit / Delete
+
+
+        tbody
+         each recentPage in recentPages
+            tr(href='/trainers/signup')
+              td= recentPage.FusionPokemon.pokedexId1
+              td= recentPage.FusionPokemon.pokedexId2
+              td= recentPage.Trainer.username
+              td= recentPage.FusionPokemon.nickname
+              td
+                a(href=`/pokepages/edit/${recentPage.id}` role='button') Edit
+                a(href=`/pokepages/delete/${recentPage.id}` role='button') Delete
+
+
 
 
 //- append head

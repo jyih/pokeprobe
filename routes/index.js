@@ -12,9 +12,11 @@ const { getRecentPokePages } = require("../queries/pokepage-queries")
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
-    const recentPages = getRecentPokePages(5)
-    res.render('index', { title: 'a/A Express Skeleton Home', recentPages });
-});
+
+router.get('/', asyncHandler(async(req, res) => {
+    const recentPages = await getRecentPokePages(5)
+    console.log(recentPages[0])
+    res.render('index', { title: 'a/A Express Skeleton Home', recentPages, });
+}))
 
 module.exports = router;
