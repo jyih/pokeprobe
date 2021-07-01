@@ -42,7 +42,7 @@ router.get('/test', asyncHandler(async (req, res) => {
 router.get('/:id', asyncHandler(async(req, res) => {
     const pokePage = await findFusion(req.params.id)
     const fusionInfo = await findFusionInfo(req.params.id)
-
+    console.log(fusionInfo)
     const nickname = pokePage.FusionPokemon.nickname
     const description = pokePage.FusionPokemon.description
     const id1 = pokePage.FusionPokemon.pokedexId1
