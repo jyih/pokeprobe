@@ -1,5 +1,5 @@
 const db = require('../db/models');
-const { Type, Pokedex, PokePage, FusionPokemon } = db
+const { Type, Pokedex, PokePage, FusionPokemon, Trainer } = db
 const { Op } = require('sequelize');
 
 const findAllPokePages = async() => {
@@ -22,9 +22,24 @@ const findFusion = async(pageId) => {
     return pokePage
 }
 
+const getRecentPokePages = async(numberOfPosts) => {
+    const pokePages = await PokePage.findAll({
+        order: [
+            [
+                'id', 'DESC'
+            ]
+        ],
+        limit: numberOfPosts,
+        include: [
+            Trainer,
+            FusionPokemon
+        ]
+    })
+    return pokePages
+}
+
 const findFusionInfo = async(pageId) => {
     const types = await Type.findAll()
-
     const pokePage = await PokePage.findByPk(pageId, 
     // {
     //    include: {
@@ -49,11 +64,12 @@ const findFusionInfo = async(pageId) => {
     const pokedexId1 = pokePage.FusionPokemon.pokedexId1
     const pokedexId2 = pokePage.FusionPokemon.pokedexId2
 
-
     pokePage.pokemon1Types = types[pokePage.FusionPokemon.pokedexId1]
 }
+
 module.exports = {
     findAllPokePages,
+    getRecentPokePages,
     // findPokePageById,
     findFusion,
     findFusionInfo
