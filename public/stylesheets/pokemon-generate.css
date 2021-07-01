@@ -9,12 +9,12 @@ body{
     background-size: 100%;
     overflow: auto;
 }
-
+/*
 .gameboy-container {
     background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860185547782750218/5a6a3becab538104d4a30e2c_2.png');
     background-repeat: no-repeat;
     background-size: 800px;
-}
+} */
 
 .gameboy-screen-container {
     position: relative;
@@ -46,6 +46,11 @@ body{
     left: 150px;
     width: 321px;
     overflow-x: hidden;
+}
+
+.error {
+    color: red;
+    margin-bottom: 5px;
 }
 
 .pokemon-generate-form-container {
