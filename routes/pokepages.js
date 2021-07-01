@@ -31,7 +31,27 @@ router.get('/:id', asyncHandler(async(req, res) => {
     res.render("pokepages/pokepages-id", { imgUrl, nickname, description })
 }))
 
-router.get('/edit/:id', asyncHandler(async(req, res) => {
+router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async(req, res) => {
+    const pokemonId = req.params.id
+    const pokePage = await PokePage.findByPk(pokemonId)
+    res.render('pokepages-edit', { pokePage, csrfToken: req.csrfToken() })
+}))
+router.post('/edit/:id(\\d+)', csrfProtection, asyncHandler(async(req, res) => {
+    const pokemonId = req.params.id
+    const pokePageToUpdate = await PokePage.findByPk(pokemonId)
+
+    const {
+        content,
+    } = req.body
+
+
+
+    await pokePageToUpdate.update({})
+}))
+
+
+
+router.get('/delete/:id(\\d+)', asyncHandler(async(req, res) => {
 
 }))
 
