@@ -74,3 +74,17 @@ h3,.types-ul {
 ul img {
     max-height: 30px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 420px;
+    margin: auto;
+    margin-top: 69px;   
+}
+
+.edit-button, .delete-button {
+    font-size: large;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white;
+}
