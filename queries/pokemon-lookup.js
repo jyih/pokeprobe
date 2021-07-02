@@ -24,7 +24,7 @@ async function lookupPokemon1(typeId) {
   // console.log(names)
   // console.log(results)
   let pokedex = results.map(pokedex => pokedex.Type1.type)
-  console.log(pokedex)
+//   console.log(pokedex)
 };
 
 async function lookupPokemon2(typeName) {
@@ -36,7 +36,7 @@ async function lookupPokemon2(typeName) {
       Pokedex
     ],
   });
-  console.log(pokemon)
+//   console.log(pokemon)
 };
 
 async function lookupPokemon3(name) {
@@ -55,7 +55,7 @@ async function lookupPokemon4(type1Id) {
       type1Id
     }
   })
-  console.log(pokemon)
+//   console.log(pokemon)
 };
 
 async function lookupPokemon5(typeName) {
@@ -74,12 +74,11 @@ async function lookupPokemon5(typeName) {
     }
   })
 
-  console.log(pokemon.map(pokemon => pokemon.name))
-  console.log(pokemon.map(pokemon => {
+pokemon.map(pokemon => {
     let mon = {}
     mon[`${pokemon.name}`] = [pokemon.type1Id, pokemon.type2Id]
     return mon;
-  }))
+  })
 };
 
 async function lookupPokemon6(typeName) {
@@ -117,7 +116,7 @@ async function lookupPokemon6(typeName) {
     mon[`${pokedex.name}`].push(pokedex.Type2 ? pokedex.Type2.type : null)
     return mon;
   })
-  console.log(pokemon)
+//   console.log(pokemon)
 };
 
 async function lookupPokemon7(typeName) {
@@ -146,7 +145,7 @@ async function lookupPokemon7(typeName) {
     }
   })
 
-  console.log(pokedexes)
+//   console.log(pokedexes)
 }
 
 module.exports = {
