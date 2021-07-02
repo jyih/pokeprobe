@@ -17,15 +17,14 @@ block content
         div(class="type-container")
             ul(class='types-ul') Types:
                 each types in fusionPokemonTypes
-                    //- li(class="type")= types
                     ul: img(src=`/images/${types}IC.png`)
 
         div(class="nickname-container")
             h2(class="nickname")=nickname
-
-        div(class="description-container")
-            h3 Description:
-            h2(class="description")=content
+        if content
+            div(class="description-container")
+                h3 Description:
+                h2(class="description")=content
     if locals.trainer && locals.trainer.id === pokePage.trainerId
         div(class='button-container')
             a(href=`/pokepages/edit/${pokePage.id}` role='button' class='edit-button' id='edit-button') Edit
