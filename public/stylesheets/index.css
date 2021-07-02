@@ -16,9 +16,18 @@ body{
     display: flex;
     justify-content: space-between;
     top: 0px;
-    /* background-color: rgb(223, 1, 1); */
-    background-color: orangered;
-    width: 100%
+    width: 100%;
+    /* background-color: orangered; */
+    /* background-image: url('public/images/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: contain ; */
+}
+
+.banner {
+    background-image: url('/images/banner1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 .nav-links a {
@@ -46,14 +55,15 @@ body{
 .search-bar-spot {
     margin: 10px;
     width: 200px;
-    height: 50px;
+    height: 30px;
 }
 
 .mag-icon {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0px;
-    width: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .log-button {

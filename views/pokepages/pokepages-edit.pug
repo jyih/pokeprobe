@@ -1,23 +1,27 @@
 extends ../layout.pug
 include ../utils.pug
 
+append head
+    link(rel='stylesheet' href='/stylesheets/pokepages-edit.css')
+
 block content
+  div(class="container")
     div
         img(src= imgUrl)
     div
-        p= name
+        h1= name
     div
         p Current Description:
         p= currentDescription
         p -----------------
-    div
-        p Current Content:
-        p= currentContent
-        p -----------------
+    //- div
+    //-     p Current Content:
+    //-     p= currentContent
+    //-     p -----------------
     div
         form(action= `/pokepages/edit/${pokemonId}`, method='post')
-            label Update Content
+            label Update Description
             div
                 input(type="hidden" name="_csrf" value=csrfToken)
-                textarea(name="content")
-                button Submit
+                textarea(name="content" cols='25' rows='7')
+                button(class='ji') Submit   
