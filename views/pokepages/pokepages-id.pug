@@ -15,14 +15,14 @@ block content
             img(src= imgUrl)
 
         div(class="type-container")
-            ul Types
+            ul(class='types-ul') Types:
                 each types in fusionPokemonTypes
                     //- li(class="type")= types
-                    li(class="type"): img(src=`https://bulbapedia.bulbagarden.net/wiki/File:${types}IC.png`)
+                    ul: img(src=`/images/${types}IC.png`)
 
         div(class="nickname-container")
             h2(class="nickname")=nickname
 
         div(class="description-container")
-            h3 Description
+            h3 Description:
             h2(class="description")=content
