@@ -26,3 +26,7 @@ block content
         div(class="description-container")
             h3 Description:
             h2(class="description")=content
+    if locals.trainer && locals.trainer.id === pokePage.trainerId
+        div(class='button-container')
+            a(href=`/pokepages/edit/${pokePage.id}` role='button' class='edit-button' id='edit-button') Edit
+            a(href=`/pokepages/delete/${pokePage.id}` role='button' class='delete-button' id='delete-button') Delete

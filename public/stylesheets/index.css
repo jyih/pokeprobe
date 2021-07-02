@@ -37,7 +37,7 @@ body{
     -webkit-text-stroke-color: #386abb;
     -webkit-text-stroke-width: 2px;
     justify-content: flex-end;
-    margin-right: 8px;
+    margin-right: 20px;
     text-decoration: none;
 }
 
@@ -151,6 +151,13 @@ tr.table-header {
 
     text-decoration: none;
     font-style: normal;
+
+    font-size: large;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white;
+
+    margin-top: 20px;
+    margin-bottom: 20px
 }
 
 #delete-button {

@@ -1,6 +1,6 @@
 
 .container{
-  width: 200px;
+  width: 240px;
   margin: auto;
   margin-top: 10px;
   text-align: center;
@@ -8,7 +8,8 @@
 
 h1 {
   color: #3686C2; 
-  font-size: 69.420pt
+  font-size: 42.69pt;
+  text-align: center;
 }
 
 label,
@@ -25,9 +26,12 @@ p{
 
 .ji:hover {
   border-radius: 50%;
-  width: 420%;
-  height: 300px;
+  width: 100%;
+  /* width: 420%; */
+  height: 200px;
+  /* height: 300px; */
   color: #420a55;
   background-color: #7EABA6;
   font-size: 16pt;
+  /* please don't mark us down Javi  it's a joke i swear */
 }

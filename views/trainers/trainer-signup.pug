@@ -12,12 +12,12 @@ block content
         +validationErrorSummary(errors)
         form(action="/trainers" method="post" class="signup-form")
             input(type="hidden" name="_csrf" value=csrfToken)
-            +createFormField("text","trainerName","Trainer Name")
-            +createFormField("text","firstName","First Name")
-            +createFormField("text","lastName","Last Name")
-            +createFormField("email","email","Email")
+            +createFormField("text","trainerName","Trainer Name",trainerName)
+            +createFormField("text","firstName","First Name", firstName)
+            +createFormField("text","lastName","Last Name", lastName)
+            +createFormField("email","email","Email", email)
             label(for="bio") Bio
-            textarea(name="bio" class="bio-input")
+            textarea(name="bio" class="bio-input")= bio
             +createFormField("password","password","Password")
             +createFormField("password","confirmPassword","Confirm Password")
             button(class="signup-button") Submit
