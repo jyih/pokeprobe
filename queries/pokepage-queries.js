@@ -13,7 +13,7 @@ const findAllPokePages = async () => {
 //     return pokePage
 // }
 
-const findFusion = async (pageId) => {
+const findPokePage = async (pageId) => {
     const pokePage = await PokePage.findByPk(pageId, {
         include: [
             FusionPokemon
@@ -38,8 +38,7 @@ const getRecentPokePages = async (numberOfPosts) => {
     return pokePages
 }
 
-const findFusionInfo = async (pageId) => {
-    const types = await Type.findAll()
+const findPokemonTypes = async (pageId) => {
     const pokePage = await PokePage.findByPk(pageId, {
         include: {
             model: FusionPokemon,
@@ -79,13 +78,6 @@ const findFusionInfo = async (pageId) => {
     const typesArr = [pokedexId1Type1, pokedexId1Type2, pokedexId2Type1, pokedexId2Type2];
     const fusionPokemonTypes = typesArr.filter(type => type !== 'none');
 
-    // fusionPokemonTypes.map(type => {
-    //     type = [
-    //         ,
-    //         type
-    //     ]
-    // })
-
     return fusionPokemonTypes
 }
 
@@ -93,6 +85,6 @@ module.exports = {
     findAllPokePages,
     getRecentPokePages,
     // findPokePageById,
-    findFusion,
-    findFusionInfo
+    findPokePage,
+    findPokemonTypes
 }

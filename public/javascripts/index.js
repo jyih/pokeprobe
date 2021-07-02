@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("hello from javascript!")
     const searchButton = document.querySelector('.mag-icon');
     const memes = document.querySelector('.memes')
     const searchBar = document.querySelector('.search-bar-spot')

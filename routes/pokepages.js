@@ -8,7 +8,7 @@ const {
 const db = require("../db/models");
 const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
-const { findAllPokePages, findFusion, findFusionInfo } = require("../queries/pokepage-queries")
+const { findAllPokePages, findPokePage, findPokemonTypes } = require("../queries/pokepage-queries")
 
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -18,9 +18,9 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    const pokePage = await findFusion(req.params.id)
+    const pokePage = await findPokePage(req.params.id)
 
-    const fusionPokemonTypes = await findFusionInfo(req.params.id)
+    const fusionPokemonTypes = await findPokemonTypes(req.params.id)
 
     const nickname = pokePage.FusionPokemon.nickname
     const description = pokePage.FusionPokemon.description
@@ -34,7 +34,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const pokemonId = req.params.id
-    const pokePage = await findFusion(pokemonId)
+    const pokePage = await findPokePage(pokemonId)
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const name = pokePage.FusionPokemon.nickname
@@ -52,7 +52,7 @@ router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
 
 router.post('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const pokemonId = req.params.id;
-    const pokePageToUpdate = await findFusion(pokemonId)
+    const pokePageToUpdate = await findPokePage(pokemonId)
     const {
         content,
     } = req.body
@@ -64,7 +64,7 @@ router.post('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
 
 router.get('/delete/:id(\\d+)', asyncHandler(async (req, res) => {
     const pokemonId = req.params.id
-    const pokePageToDelete = await findFusion(pokemonId)
+    const pokePageToDelete = await findPokePage(pokemonId)
     const pokemon = pokePageToDelete.FusionPokemon
     pokePageToDelete.destroy()
     pokemon.destroy()
