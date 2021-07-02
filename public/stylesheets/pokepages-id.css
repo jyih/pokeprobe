@@ -1,5 +1,4 @@
 
-
 body {
     font-family: 'Oswald', sans-serif;
 }
@@ -30,4 +29,20 @@ body {
     background: #ffcc03 125px;
     border-radius: 20px;
     box-shadow: 6px 6px 6px #e6eaec, -6px -6px 6px white;
+}
+
+.types {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    display: inline-block;
+    list-style-type: none;
+    width: 30px;
+}
+
+.type {
+    background-color: #ffcc03;
+    border-radius: 50px;
+    border: #386abb 3px solid;
+    font-size: large;
 }
