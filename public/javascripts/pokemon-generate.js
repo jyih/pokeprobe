@@ -36,9 +36,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     let fusionData = generateFusionData();
+    const error = document.querySelector('.error')
 
     releaseButton.addEventListener('click', event => {
         fusionData = generateFusionData();
+        error.innerHTML = ''
     })
 
     const pokeNameDiv = document.querySelector('.wild-pokemon-name');
@@ -49,7 +51,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
     catchButton.addEventListener('click', (event) => {
-        const error = document.querySelector('.error')
 
         if (nicknameInput.value.length > 20) {
             event.preventDefault()
