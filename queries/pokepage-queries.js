@@ -69,16 +69,16 @@ const findPokemonTypes = async (pageId) => {
         }
     })
 
-    const pokedexId1Type1 = pokePage.FusionPokemon.Pokedex1.Type1.type
-    const pokedexId1Type2 = pokePage.FusionPokemon.Pokedex1.Type2 ? pokePage.FusionPokemon.Pokedex1.Type2.type : 'none'
+    const pokedexId1Type1 = pokePage.FusionPokemon.Pokedex1.Type1.type;
+    const pokedexId1Type2 = pokePage.FusionPokemon.Pokedex1.Type2 ? pokePage.FusionPokemon.Pokedex1.Type2.type : 'none';
 
-    const pokedexId2Type1 = pokePage.FusionPokemon.Pokedex2.Type1.type
-    const pokedexId2Type2 = pokePage.FusionPokemon.Pokedex2.Type2 ? pokePage.FusionPokemon.Pokedex2.Type2.type : 'none'
+    const pokedexId2Type1 = pokePage.FusionPokemon.Pokedex2.Type1.type;
+    const pokedexId2Type2 = pokePage.FusionPokemon.Pokedex2.Type2 ? pokePage.FusionPokemon.Pokedex2.Type2.type : 'none';
 
     const typesArr = [pokedexId1Type1, pokedexId1Type2, pokedexId2Type1, pokedexId2Type2];
     const fusionPokemonTypes = typesArr.filter(type => type !== 'none');
 
-    return fusionPokemonTypes
+    return Array.from(new Set(fusionPokemonTypes)); //remove duplicates
 }
 
 module.exports = {
