@@ -13,7 +13,6 @@ const { findAllPokePages, findPokePage, findPokemonTypes } = require("../queries
 
 router.get('/', asyncHandler(async (req, res) => {
     const pokePages = await findAllPokePages()
-    // console.log(pokePages)
     res.render("pokepages/pokepages", { pokePages })
 }))
 
