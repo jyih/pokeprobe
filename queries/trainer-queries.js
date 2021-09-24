@@ -17,11 +17,13 @@ const findAllTrainers = async() => {
 }
 
 const findTrainerPokemon = async(pageId) => {
-    const pokemon = await Trainer.findAll({
+    const pokemon = await FusionPokemon.findAll({
         where: {
             trainerId: pageId
         }
     })
+
+    return pokemon
 }
 
 module.exports = {
