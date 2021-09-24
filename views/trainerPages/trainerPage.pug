@@ -6,9 +6,8 @@ block content
             table
                 thead(class="table-header")
                     tr(class = 'table-row table-header')
-                        th(class='memes') Pokemon
+                        th Pokemon
                         th Nickname
-                        th Trainer Name
                         th
 
                 tbody(class='table-body')
@@ -17,5 +16,8 @@ block content
                             td(class="table-data")
                                 a(href=`/pokepages/${mon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${mon.pokedexId1}/${mon.pokedexId1}.${mon.pokedexId2}.png`)
                             td(class='table-data'): a(href=`/pokepages/${mon.id}`)= mon.nickname
-                //- div
-                //-     li= mon.nickname
+                            td(class='table-data')
+                                if locals.trainer && locals.trainer.id === mon.trainerId
+                                    div(class='button-container')
+                                        a(href=`/pokepages/edit/${mon.id}` role='button' class='edit-button' id='edit-button') Edit
+                                        a(href=`/pokepages/delete/${mon.id}` role='button' class='delete-button' id='delete-button') Delete
