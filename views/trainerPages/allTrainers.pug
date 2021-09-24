@@ -1,0 +1,7 @@
+extends ../layout.pug
+
+block content
+    div Hello
+        ul
+            each trainer in trainers
+                li= trainer.username
