@@ -17,9 +17,7 @@ block content
                                 a(href=`/pokepages/${mon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${mon.pokedexId1}/${mon.pokedexId1}.${mon.pokedexId2}.png`)
                             td(class='table-data'): a(href=`/pokepages/${mon.id}`)= mon.nickname
                             td(class='table-data')
-                                if locals.authenticated && locals.trainer && locals.trainer.id === mon.trainerId
-                                    //- div= locals.trainer.id
-                                    //- div= mon.trainerId
+                                if locals.authenticated && allowed
                                     div(class='button-container')
                                         a(href=`/pokepages/edit/${mon.id}` role='button' class='edit-button' id='edit-button') Edit
                                         a(href=`/pokepages/delete/${mon.id}` role='button' class='delete-button' id='delete-button') Delete
