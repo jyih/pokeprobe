@@ -8,7 +8,8 @@ const {
 const db = require("../db/models");
 const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
-const { getRecentPokePages } = require("../queries/pokepage-queries")
+const { getRecentPokePages } = require("../queries/pokepage-queries");
+const { Sequelize } = require("../db/models");
 
 
 /* GET home page. */
@@ -29,7 +30,26 @@ router.get('/', asyncHandler(async(req, res) => {
 */
     
 router.get('/search/:term', asyncHandler(async(req, res) => {
-    res.render('search', {});
+    const term = req.params.term;
+    const Op = Sequelize.Op;
+
+    const trainers = await Trainer.findAll({
+        where: {
+            username: {
+                [Op.iLike]: `%${term}%`
+            }
+        }
+    });
+    
+    const basePokemon = await Pokedex.findAll({
+        where: {
+            name: {
+                [Op.iLike]: `%${term}%`
+            }
+        }
+    });
+
+    res.render('search', {trainers});
 }))
 
 module.exports = router;

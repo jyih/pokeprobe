@@ -1,4 +1,7 @@
 extends layout.pug
 
 block content
-    div test search pug
+    each trainer in trainers 
+        div= trainer.username
+    each pokemon in basePokemon
+        div= pokemon.name
