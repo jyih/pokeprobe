@@ -3,7 +3,56 @@ const { Type, Pokedex, FusionPokemon } = db
 const { Op } = require('sequelize');
 
 async function getFusionPokemonByType(type) {
-
+    return await FusionPokemon.findOne({
+        include: [{
+            model: Pokedex,
+            as: 'Pokedex1',
+            include: [{
+                model: Type,
+                as: 'Type1',
+            },
+            {
+                model: Type,
+                as: 'Type2'
+            }]
+        },
+        {
+            model: Pokedex,
+            as: 'Pokedex2',
+            include: [{
+                model: Type,
+                as: 'Type1'
+            },
+            {
+                model: Type,
+                as: 'Type2'
+            }]
+        }],
+        where: {
+            [Op.or]: [
+                {
+                    '$Pokedex1.Type1.type$': {
+                        [Op.iLike]: `%${type}%`
+                    }
+                },
+                {
+                    '$Pokedex1.Type2.type$': {
+                        [Op.iLike]: `%${type}%`
+                    }
+                },
+                {
+                    '$Pokedex2.Type1.type$': {
+                        [Op.iLike]: `%${type}%`
+                    }
+                },
+                {
+                    '$Pokedex2.Type2.type$': {
+                        [Op.iLike]: `%${type}%`
+                    }
+                }
+            ]
+        }
+    });
 }
 
 async function getFusionPokemonByName(name) {
@@ -50,7 +99,9 @@ async function searchFusionPokemon(term) {
 
     const fusionPokemonByName = await getFusionPokemonByName(term);
 
-    const allFusions = fusionPokemonByName.concat(fusionPokemonByBase);
+    const fusionPokemonByType = await getFusionPokemonByType(term)
+
+    const allFusions = fusionPokemonByName.concat(fusionPokemonByBase).concat(fusionPokemonByType);
 
     const fusionIds = new Set(
         allFusions.map(pokemon => pokemon.id)
