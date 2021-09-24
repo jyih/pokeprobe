@@ -13,9 +13,9 @@ const { getRecentPokePages } = require("../queries/pokepage-queries")
 
 /* GET home page. */
 
-router.get('/', asyncHandler(async(req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
     const recentPages = await getRecentPokePages(6)
-    res.render('index', { title: 'a/A Express Skeleton Home', recentPages, });
+    res.render('index', { title: 'PokeProbe', recentPages, });
 }))
 
 module.exports = router;
