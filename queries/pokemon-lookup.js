@@ -3,6 +3,16 @@ const { Type, Pokedex, FusionPokemon } = db
 const { Op } = require('sequelize');
 
 async function getFusionPokemonByType(type) {
+    const types = await Type.findAll({
+        where: {
+            type: {
+                [Op.iLike]: type
+            } 
+        }
+    })
+
+    const typeIds = types.map(type => type.id)
+
     return await FusionPokemon.findAll({
         include: [{
             model: Pokedex,
@@ -31,23 +41,23 @@ async function getFusionPokemonByType(type) {
         where: {
             [Op.or]: [
                 {
-                    '$Pokedex1.Type1.type$': {
-                        [Op.iLike]: `%${type}%`
+                    '$Pokedex1.Type1.id$': {
+                        [Op.in]: typeIds
                     }
                 },
                 {
-                    '$Pokedex1.Type2.type$': {
-                        [Op.iLike]: `%${type}%`
+                    '$Pokedex1.Type2.id$': {
+                        [Op.in]: typeIds
                     }
                 },
                 {
-                    '$Pokedex2.Type1.type$': {
-                        [Op.iLike]: `%${type}%`
+                    '$Pokedex2.Type1.id$': {
+                        [Op.in]: typeIds
                     }
                 },
                 {
-                    '$Pokedex2.Type2.type$': {
-                        [Op.iLike]: `%${type}%`
+                    '$Pokedex2.Type2.id$': {
+                        [Op.in]: typeIds
                     }
                 }
             ]
