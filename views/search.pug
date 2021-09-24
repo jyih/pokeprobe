@@ -1,7 +1,9 @@
 extends layout.pug
 
 block content
+    div USERS:
     each trainer in trainers 
         div= trainer.username
-    each pokemon in basePokemon
-        div= pokemon.name
+    div POKEMON:
+    each pokemon in fusionPokemon
+        div= pokemon.nickname

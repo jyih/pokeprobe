@@ -49,7 +49,36 @@ router.get('/search/:term', asyncHandler(async(req, res) => {
         }
     });
 
-    res.render('search', {trainers});
+    const baseIds = basePokemon.map(pokemon => pokemon.id)
+
+    const fusionPokemonByBase = await FusionPokemon.findAll({
+        where: {
+            [Op.or]: [
+                {
+                    pokedexId1: {
+                        [Op.in]: baseIds
+                    }
+                },
+                {
+                    pokedexId2: {
+                        [Op.in]: baseIds
+                    }
+                }
+            ]
+        }
+    })
+
+    const fusionPokemonByName = await FusionPokemon.findAll({
+        where: {
+            nickname: {
+                [Op.iLike]: `%${term}%`
+            }
+        }
+    });
+
+    let fusionPokemon = fusionPokemonByName;
+
+    res.render('search', {trainers, fusionPokemon});
 }))
 
 module.exports = router;
