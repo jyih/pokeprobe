@@ -122,7 +122,17 @@ async function searchFusionPokemon(term) {
             id: {
                 [Op.in]: Array.from(fusionIds)
             }
-        }
+        },
+        include: [
+            {
+                model: Pokedex,
+                as: 'Pokedex1'
+            },
+            {
+                model: Pokedex,
+                as: 'Pokedex2'
+            }
+        ]
     });
 
     return fusionPokemon;
