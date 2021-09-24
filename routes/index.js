@@ -10,7 +10,7 @@ const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
 const { getRecentPokePages } = require("../queries/pokepage-queries");
 const { Sequelize } = require("../db/models");
-const { searchFusionPokemonByNameOrBase } = require("../queries/pokemon-lookup");
+const { searchFusionPokemon } = require("../queries/pokemon-lookup");
 
 
 /* GET home page. */
@@ -42,7 +42,7 @@ router.get('/search/:term', asyncHandler(async(req, res) => {
         }
     });
     
-    let fusionPokemon = await searchFusionPokemonByNameOrBase(term);
+    let fusionPokemon = await searchFusionPokemon(term);
 
     res.render('search', {trainers, fusionPokemon});
 }))
