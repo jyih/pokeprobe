@@ -3,7 +3,7 @@ const { Type, Pokedex, FusionPokemon } = db
 const { Op } = require('sequelize');
 
 async function getFusionPokemonByType(type) {
-    return await FusionPokemon.findOne({
+    return await FusionPokemon.findAll({
         include: [{
             model: Pokedex,
             as: 'Pokedex1',
