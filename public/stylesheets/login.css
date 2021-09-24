@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #eef2f5;
     font-family: 'Oswald', sans-serif;
     overflow: auto;
@@ -63,6 +63,7 @@ body{
 .login-container {
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 400px;
     height: auto;
     border-radius: 20px;
