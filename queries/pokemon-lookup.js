@@ -1,7 +1,50 @@
 const db = require('../db/models');
-const { Type, Pokedex } = db
+const { Type, Pokedex, FusionPokemon } = db
 const { Op } = require('sequelize');
 
+async function searchFusionPokemonByNameOrBase(term) {
+    const basePokemon = await Pokedex.findAll({
+        where: {
+            name: {
+                [Op.iLike]: `%${term}%`
+            }
+        }
+    });
+
+    const baseIds = basePokemon.map(pokemon => pokemon.id)
+
+    const fusionPokemonByBase = await FusionPokemon.findAll({
+        where: {
+            [Op.or]: [
+                {
+                    pokedexId1: {
+                        [Op.in]: baseIds
+                    }
+                },
+                {
+                    pokedexId2: {
+                        [Op.in]: baseIds
+                    }
+                }
+            ]
+        }
+    })
+
+    const fusionPokemonByName = new Set(await FusionPokemon.findAll({
+        where: {
+            nickname: {
+                [Op.iLike]: `%${term}%`
+            }
+        }
+    }));
+
+    console.log('BEFORE****', fusionPokemon)
+
+    console.log('AFTER****', fusionPokemon)
+
+    return Array.from(fusionPokemon)
+
+}
 
 async function lookupPokemon1(typeId) {
   /*
@@ -156,4 +199,5 @@ module.exports = {
   lookupPokemon5,
   lookupPokemon6,
   lookupPokemon7,
+  searchFusionPokemonByNameOrBase
 }

@@ -10,6 +10,7 @@ const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
 const { getRecentPokePages } = require("../queries/pokepage-queries");
 const { Sequelize } = require("../db/models");
+const { searchFusionPokemonByNameOrBase } = require("../queries/pokemon-lookup");
 
 
 /* GET home page. */
@@ -41,42 +42,8 @@ router.get('/search/:term', asyncHandler(async(req, res) => {
         }
     });
     
-    const basePokemon = await Pokedex.findAll({
-        where: {
-            name: {
-                [Op.iLike]: `%${term}%`
-            }
-        }
-    });
 
-    const baseIds = basePokemon.map(pokemon => pokemon.id)
-
-    const fusionPokemonByBase = await FusionPokemon.findAll({
-        where: {
-            [Op.or]: [
-                {
-                    pokedexId1: {
-                        [Op.in]: baseIds
-                    }
-                },
-                {
-                    pokedexId2: {
-                        [Op.in]: baseIds
-                    }
-                }
-            ]
-        }
-    })
-
-    const fusionPokemonByName = await FusionPokemon.findAll({
-        where: {
-            nickname: {
-                [Op.iLike]: `%${term}%`
-            }
-        }
-    });
-
-    let fusionPokemon = fusionPokemonByName;
+    let fusionPokemon = await searchFusionPokemonByNameOrBase(term);
 
     res.render('search', {trainers, fusionPokemon});
 }))
