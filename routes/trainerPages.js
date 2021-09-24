@@ -20,6 +20,7 @@ router.get('/', asyncHandler(async (req, res) => {
 router.get('/:id', asyncHandler(async (req, res) => {
     const trainer = await findTrainer(req.params.id)
     const pokemon = await findTrainerPokemon(req.params.id)
+    // console.log(res)
     res.render("trainerPages/trainerPage", {trainer, pokemon})
 }))
 
