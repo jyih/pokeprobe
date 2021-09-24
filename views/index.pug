@@ -9,14 +9,14 @@ block content
             th(class='memes') Pokemon
             th Trainer Name
             th Nickname
-            th 
+            th
 
         tbody(class='table-body')
           each recentPage in recentPages
             tr(class='table-row')
               td(class='table-data')
                 a(href=`/pokepages/${recentPage.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${recentPage.FusionPokemon.pokedexId1}/${recentPage.FusionPokemon.pokedexId1}.${recentPage.FusionPokemon.pokedexId2}.png`)
-              td(class='table-data')= recentPage.Trainer.username
+              td(class='table-data'): a(href=`/users/${recentPage.Trainer.id}`)= recentPage.Trainer.username
               td(class='table-data'): a(href=`/pokepages/${recentPage.id}`)= recentPage.FusionPokemon.nickname
               td(class='table-data')
                 if locals.trainer && locals.trainer.id === recentPage.trainerId
