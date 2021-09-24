@@ -1,7 +1,8 @@
 extends ../layout.pug
 
 block content
-    div Hello
+    div
         ul
             each trainer in trainers
-                li= trainer.username
+                li
+                    a(href=`/users/${trainer.id}`)= trainer.username
