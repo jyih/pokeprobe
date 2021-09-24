@@ -30,20 +30,29 @@ async function searchFusionPokemonByNameOrBase(term) {
         }
     })
 
-    const fusionPokemonByName = new Set(await FusionPokemon.findAll({
+    const fusionPokemonByName = await FusionPokemon.findAll({
         where: {
             nickname: {
                 [Op.iLike]: `%${term}%`
             }
         }
-    }));
+    });
 
-    console.log('BEFORE****', fusionPokemon)
+    const allFusions = fusionPokemonByName.concat(fusionPokemonByBase)
 
-    console.log('AFTER****', fusionPokemon)
+    const fusionIds = new Set(
+        allFusions.map(pokemon => pokemon.id)
+    )
 
-    return Array.from(fusionPokemon)
+    const fusionPokemon = await FusionPokemon.findAll({
+        where: {
+            id: {
+                [Op.in]: Array.from(fusionIds)
+            }
+        }
+    })
 
+    return fusionPokemon
 }
 
 async function lookupPokemon1(typeId) {

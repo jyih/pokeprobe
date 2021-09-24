@@ -42,7 +42,6 @@ router.get('/search/:term', asyncHandler(async(req, res) => {
         }
     });
     
-
     let fusionPokemon = await searchFusionPokemonByNameOrBase(term);
 
     res.render('search', {trainers, fusionPokemon});
