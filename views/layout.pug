@@ -21,8 +21,9 @@ html
       nav(class="navbar-container")
         div(class="nav-links")
           a(href="/"): img(src='/images/dugon.png' class="logo-small")
-          input(type="text" placeholder="Search..." name="search" id="search-bar")
-          button(id="search-button"): i(class="fa fa-search")
+          form(id='search-form')
+            input(type="text" placeholder="Search..." name="search" id="search-bar")
+            button(id="search-button"): i(class="fa fa-search")
         div(class="nav-links")
           if locals.authenticated
             a(href="/fusion-pokemon") Catch
