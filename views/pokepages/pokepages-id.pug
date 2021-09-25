@@ -14,13 +14,19 @@ block content
                 each types in fusionPokemonTypes
                     ul: img(src=`/images/${types}IC.png`)
 
-        div(class="basemon-container content-container")
-            ul(class='basemon-ul') Base Pokemon:
-                each basemon in basemons
-                    h2(class='basemon')=basemon
+        div(class='content-container')
+            div(class="nickname-container")
+                h2(class="nickname")=nickname
 
-        div(class="nickname-container content-container")
-            h2(class="nickname")=nickname
+            p(class="basemon-container")
+                div(class='basemon-ul')='Parent Species: '
+                    if basemon1 == basemon2
+                        span()=`${basemon1}`
+                    else
+                        span()=`${basemon1}, ${basemon2}`
+                    //- each basemon in basemons
+                    //-     span(class='basemon')=`${basemon} `
+
 
         if content
             div(class="description-container content-container")

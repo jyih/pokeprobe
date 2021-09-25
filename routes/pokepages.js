@@ -30,6 +30,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
         pokePage.FusionPokemon.Pokedex1.name,
         pokePage.FusionPokemon.Pokedex2.name,
     ]
+    basemon1 = basemons[0]
+    basemon2 = basemons[1]
 
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
 
@@ -40,7 +42,9 @@ router.get('/:id', asyncHandler(async (req, res) => {
         description,
         content,
         fusionPokemonTypes,
-        basemons
+        // basemons
+        basemon1,
+        basemon2
     })
 }))
 
