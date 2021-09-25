@@ -24,9 +24,6 @@ block content
                         span()=`${basemon1}`
                     else
                         span()=`${basemon1}, ${basemon2}`
-                    //- each basemon in basemons
-                    //-     span(class='basemon')=`${basemon} `
-
 
         if content
             div(class="description-container content-container")
@@ -36,5 +33,4 @@ block content
     if locals.trainer && locals.trainer.id === pokePage.trainerId
         div(class='button-container')
             a(href=`/pokepages/edit/${pokePage.id}` role='button' class='edit-button' id='edit-button') Edit
-            a(href=`/pokepages/delete/${pokePage.id}` role='button' class='delete-button' id='delete-button') Delete
-            a(href=`/pokepages/delete/${pokePage.id}` role='button' class='delete-button hide-button' id='delete-button') Confirm Delete
+            a(role='button' class='delete-button' id='delete-button') Delete
