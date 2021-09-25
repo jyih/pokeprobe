@@ -9,6 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const searchRouter = require('./routes/search')
 const indexRouter = require('./routes/index');
 const trainersRouter = require('./routes/trainers');
+const trainerPagesRouter = require('./routes/trainerPages')
 const pokemonRouter = require('./routes/pokemon');
 const pokePagesRouter = require("./routes/pokepages")
 const { restoreTrainer } = require('./auth')
@@ -50,6 +51,7 @@ app.use('/search', searchRouter);
 app.use('/trainers', trainersRouter);
 app.use('/fusion-pokemon', pokemonRouter);
 app.use('/pokepages', pokePagesRouter);
+app.use('/users', trainerPagesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -61,7 +63,7 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+    // console.log(res.locals)
     // render the error page
     res.status(err.status || 500);
     res.render('error');

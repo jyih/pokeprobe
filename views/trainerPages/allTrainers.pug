@@ -1,0 +1,8 @@
+extends ../layout.pug
+
+block content
+    div
+        ul
+            each trainer in trainers
+                li
+                    a(href=`/users/${trainer.id}`)= trainer.username
