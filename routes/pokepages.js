@@ -26,9 +26,18 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const content = pokePage.content
+    const baseMons = pokePage.baseMons
     // also get names from pokedex
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
-    res.render("pokepages/pokepages-id", { pokePage, imgUrl, nickname, description, content, fusionPokemonTypes })
+    res.render("pokepages/pokepages-id", {
+        pokePage,
+        imgUrl,
+        nickname,
+        description,
+        content,
+        fusionPokemonTypes,
+        baseMons
+    })
 }))
 
 router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {

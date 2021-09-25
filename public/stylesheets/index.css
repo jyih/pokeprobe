@@ -189,6 +189,9 @@ tr.table-header {
     background-color: rgb(247, 183, 183);
 }
 
+#hide-button {
+    display: none;
+}
 
 
 /* .button-container{
