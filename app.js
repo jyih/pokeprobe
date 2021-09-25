@@ -12,6 +12,7 @@ const trainersRouter = require('./routes/trainers');
 const trainerPagesRouter = require('./routes/trainerPages')
 const pokemonRouter = require('./routes/pokemon');
 const pokePagesRouter = require("./routes/pokepages")
+const landing = require("./routes/landing");
 const { restoreTrainer } = require('./auth')
 
 const app = express();
@@ -46,8 +47,9 @@ app.use(
 store.sync();
 
 app.use(restoreTrainer);
-app.use('/', indexRouter);
 app.use('/search', searchRouter);
+app.use('/home', indexRouter);
+app.use('/', landing);
 app.use('/trainers', trainersRouter);
 app.use('/fusion-pokemon', pokemonRouter);
 app.use('/pokepages', pokePagesRouter);

@@ -8,10 +8,11 @@ body{
     background-color: #eef2f5;
     font-family: 'Oswald', sans-serif;
     overflow: auto;
+    padding-bottom: 200px;
 }
 
 /* project skeleton starter - end */
-/* 
+/*
 footer {
     position: fixed;
     bottom: 0;
@@ -19,7 +20,7 @@ footer {
     right: 0;
     background-color: black;
     color: white;
-    
+
     height: 20px;
     font-size: 10pt;
 } */
@@ -45,7 +46,7 @@ footer {
 }
 
 /* .banner {
-    position: fixed; 
+    position: fixed;
     top:0px;
     width: 100%;
     height: 70px;
@@ -284,3 +285,39 @@ table {
 .make-red {
     border: 1px solid red !important;
 } */
+
+
+
+/* footer starts */
+.footer__outer-container {
+    margin-top: 400px;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    text-align: center;
+    white-spacE: nowrap;
+    padding-bottom: 20px;
+    color: white;
+    background-color: black;
+}
+
+.footer__dugon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fab {
+    color: #386abb;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.fab:hover {
+    color: #ffcc03;
+}
+
+/* footer ends */
