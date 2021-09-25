@@ -5,21 +5,27 @@ append head
 
 block content
     div(id='search-results')
-        div(class='users-list') Trainers:
-            ul
-                each trainer in trainers 
-                    li= trainer.username
+        div(class='users-list') 
+            table
+                thead 
+                    tr(class='search-table__header')
+                        th Trainers
+                tbody
+                    each trainer in trainers 
+                        tr(class='search__username') 
+                            td
+                                a(href='/')= trainer.username
         
         div(class='pokemon-list')
             table
                 thead
-                tr
-                    th Pokemon
-                    th Parent Breeds
-                    //- th Elements
+                    tr(class='search-table__header')
+                        th Pokemon
+                        th Parent Breeds
+                        //- th Elements
                 tbody
                     each pokemon in fusionPokemon
-                        tr
+                        tr(class='search__pokemon')
                             td
                                 a(href=`/pokepages/${pokemon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${pokemon.pokedexId1}/${pokemon.pokedexId1}.${pokemon.pokedexId2}.png` class='search-results')
                                 div
