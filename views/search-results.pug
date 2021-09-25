@@ -1,9 +1,29 @@
 extends layout.pug
 
+append head 
+    link(rel="stylesheet" href="/stylesheets/search-results.css")
+
 block content
-    div USERS:
-    each trainer in trainers 
-        div= trainer.username
-    div POKEMON:
-    each pokemon in fusionPokemon
-        div= pokemon.nickname
+    div(id='search-results')
+        div(class='users-list') Trainers:
+            ul
+                each trainer in trainers 
+                    li= trainer.username
+        
+        div(class='pokemon-list')
+            table
+                thead
+                tr
+                    th Pokemon
+                    th Parent Breeds
+                    //- th Elements
+                tbody
+                    each pokemon in fusionPokemon
+                        tr
+                            td
+                                a(href=`/pokepages/${pokemon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${pokemon.pokedexId1}/${pokemon.pokedexId1}.${pokemon.pokedexId2}.png` class='search-results')
+                                div
+                                    a(href=`/pokepages/${pokemon.id}`)= pokemon.nickname
+                            td
+                                div= pokemon.Pokedex1.name
+                                div= pokemon.Pokedex2.name
