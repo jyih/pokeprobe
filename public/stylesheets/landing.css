@@ -1,0 +1,20 @@
+.landing__outer-container {
+    display: grid;
+    place-items: center;
+}
+
+.landing_description {
+    color: red;
+}
+
+.img-dugon {
+    width: 200px;
+}
+
+.img-dugtrio {
+    width: 200px;
+}
+
+.img-porygon {
+    width: 200px;
+}
