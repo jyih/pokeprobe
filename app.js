@@ -45,8 +45,8 @@ app.use(
 store.sync();
 
 app.use(restoreTrainer);
-app.use('/', indexRouter);
-app.use('/landing', landing);
+app.use('/home', indexRouter);
+app.use('/', landing);
 app.use('/trainers', trainersRouter);
 app.use('/fusion-pokemon', pokemonRouter);
 app.use('/pokepages', pokePagesRouter);
