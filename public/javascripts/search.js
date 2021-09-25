@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         const searchField = document.getElementById('search-bar');
 
         if (!searchField.value) {
-            searchField.value = 'Please entire a search term.'
+            searchField.value = 'Please enter a search term.'
 
             return
         }

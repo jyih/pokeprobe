@@ -1,3 +1,16 @@
+#search-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
 .users-list {
-    color:blue;
+    grid-column: 1 / 2;
+    color:red;
+}
+
+.pokemon-list {
+    grid-column: 2 / 4;
+    padding: 0px;
+    margin: 0px;
 }
