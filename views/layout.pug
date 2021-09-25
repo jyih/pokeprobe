@@ -5,8 +5,8 @@ html
         title="POKEPROBE"
         link(rel='stylesheet' href='/stylesheets/reset.css')
         link(rel='stylesheet' href='/stylesheets/index.css')
-        script(src="/javascripts/navbar.js" type="module")
-        script(src="/javascripts/index.js" type="module")
+        //- script(src="/javascripts/navbar.js" type="module")
+        script(src="/javascripts/search.js" type="module")
 
         //-oswald font, regular 400
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@ html
       nav(class="navbar-container")
         div(class="nav-links")
           a(href="/"): img(src='/images/dugon.png' class="logo-small")
-          input(type="text" placeholder="Search..." name="search" class="search-bar-spot")
-          button(class="mag-icon"): i(class="fa fa-search")
+          input(type="text" placeholder="Search..." name="search" id="search-bar")
+          button(id="search-button"): i(class="fa fa-search")
         div(class="nav-links")
           if locals.authenticated
             a(href="/fusion-pokemon") Catch

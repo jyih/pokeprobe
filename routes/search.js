@@ -25,7 +25,7 @@ router.get('/:term', asyncHandler(async(req, res) => {
     
     let fusionPokemon = await searchFusionPokemon(term);
 
-    res.render('searchResults', {trainers, fusionPokemon});
+    res.render('search-results', {trainers, fusionPokemon});
 }));
 
 module.exports = router;
