@@ -21,6 +21,12 @@ body {
     align-content: center;
 }
 
+.content-container {
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
+}
+
 .nickname-container {
     text-align: center;
     margin-top: 10px;
@@ -28,14 +34,12 @@ body {
 
 .nickname {
     font-size: x-large;
-    border-radius: 20px;
-    box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
 }
 
 .description-container {
     font-size: large;
-    border-radius: 20px;
-    box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white;
+    /* border-radius: 20px;
+    box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white; */
 }
 
 h3, .description {

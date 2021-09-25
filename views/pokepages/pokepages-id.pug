@@ -14,11 +14,16 @@ block content
                 each types in fusionPokemonTypes
                     ul: img(src=`/images/${types}IC.png`)
 
-        div(class="nickname-container")
+        div(class="basemon-container content-container")
+            ul(class='basemon-ul') Base Pokemon:
+                each basemon in basemons
+                    h2(class='basemon')=basemon
+
+        div(class="nickname-container content-container")
             h2(class="nickname")=nickname
 
         if content
-            div(class="description-container")
+            div(class="description-container content-container")
                 h3 Description:
                 h2(class="description")=content
 
