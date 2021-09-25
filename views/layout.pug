@@ -5,8 +5,8 @@ html
         title="POKEPROBE"
         link(rel='stylesheet' href='/stylesheets/reset.css')
         link(rel='stylesheet' href='/stylesheets/index.css')
-        script(src="/javascripts/navbar.js" type="module")
-        script(src="/javascripts/index.js" type="module")
+        //- script(src="/javascripts/navbar.js" type="module")
+        script(src="/javascripts/search.js" type="module")
 
         //-oswald font, regular 400
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,15 @@ html
         <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        //-fontawesome icons
+        <script src="https://kit.fontawesome.com/fad101eddb.js" crossorigin="anonymous"></script>
   body
     div(class='banner')
       nav(class="navbar-container")
         div(class="nav-links")
           a(href="/"): img(src='/images/dugon.png' class="logo-small")
-          input(type="text" placeholder="Search..." name="search" class="search-bar-spot")
-          button(class="mag-icon"): i(class="fa fa-search")
+          input(type="text" placeholder="Search..." name="search" id="search-bar")
+          button(id="search-button"): i(class="fa fa-search")
         div(class="nav-links")
           if locals.authenticated
             a(href="/fusion-pokemon") Catch
@@ -30,6 +32,32 @@ html
               a(href='/trainers/login') Login
               a(href='/trainers/signup') Register
 
-    //- footer PokeProbe by DUGON 
-    
+    //- footer PokeProbe by DUGON
+
   block content
+
+  footer
+    div(class='footer__outer-container')
+      div(class='footer__dugon')
+        a(href='https://github.com/jyih/pokeprobe' target='_blank'): i(class="fab fa-github-square fa-3x")
+        div PokeProbe
+      div(class='footer__jojo')
+        p Johnathan Yih
+        a(href='https://github.com/jyih/' target='_blank'): i(class="fab fa-github fa-2x")
+        a(href='https://www.linkedin.com/in/johnathan-yih/' target='_blank'): i(class="fab fa-linkedin fa-2x")
+      div(class='footer__michelle')
+        p Michelle Kontoff
+        a(href='https://github.com/michellekontoff' target='_blank'): i(class="fab fa-github fa-2x")
+        a(href='https://www.linkedin.com/in/michelle-kontoff-149866132/' target='_blank'): i(class="fab fa-linkedin fa-2x")
+      div(class='footer__brandon')
+        p Brandon Simpson
+        a(href='https://github.com/Omstachu' target='_blank'): i(class="fab fa-github fa-2x")
+        a(href='https://www.linkedin.com/in/brandon-simpson-5617ab212/' target='_blank'): i(class="fab fa-linkedin fa-2x")
+      div(class='footer__ji')
+        p Ji Kyung
+        a(href='https://github.com/ji-k' target='_blank'): i(class="fab fa-github fa-2x")
+        a(href='https://www.linkedin.com/in/jikyung' target='_blank'): i(class="fab fa-linkedin fa-2x")
+      div(class='footer__levi')
+        p Levi Dominguez
+        a(href='https://github.com/AVRU5' target='_blank'): i(class="fab fa-github fa-2x")
+        a(href='https://www.linkedin.com/in/levidominguez/' target='_blank'): i(class="fab fa-linkedin fa-2x")

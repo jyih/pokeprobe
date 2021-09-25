@@ -1,0 +1,44 @@
+extends layout.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/search-results.css")
+
+block content
+    div(id='search-results')
+        div(class='users-list')
+            table
+                thead
+                    tr(class='search-table__header')
+                        th Trainers
+                tbody
+                    tr
+                        td: div(class='search-user__spacer')
+                    if trainers.length
+                        each trainer in trainers
+                            tr(class='search__username')
+                                td
+                                    a(href=`/users/${trainer.id}`)= trainer.username
+                    else
+                        tr: td(class='no-trainers') No trainers found.
+
+        div(class='pokemon-list')
+            table
+                thead
+                    tr(class='search-table__header')
+                        th Pokemon
+                        th Parent Breeds
+                        //- th Elements
+                tbody
+                    if fusionPokemon.length
+                        each pokemon in fusionPokemon
+                            tr(class='search__pokemon')
+                                td
+                                    a(href=`/pokepages/${pokemon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${pokemon.pokedexId1}/${pokemon.pokedexId1}.${pokemon.pokedexId2}.png` class='search-results')
+                                    div
+                                        a(href=`/pokepages/${pokemon.id}`)= pokemon.nickname
+                                td
+                                    div= pokemon.Pokedex1.name
+                                    div= pokemon.Pokedex2.name
+                    else
+                        tr
+                            td(class='search__pokemon no-pokemon' id='no-pokemon') No pokemon found.

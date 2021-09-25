@@ -1,0 +1,87 @@
+#search-results {
+    display: grid;
+    grid-template-columns: 1fr 0.25fr 2.75fr;
+    grid-template-rows: auto;
+    width: 800px;
+    margin: 20px auto;
+}
+
+.users-list {
+    grid-column: 1 / 2;
+    background-color: rgb(245, 245, 234);
+    height: fit-content;
+    /* padding: 14px; */
+    border: 1px solid rgb(150,150,150);
+    box-shadow: 0px 0px 20px 0px  #5E855A;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+}
+
+.search-user__spacer {
+    height: 4px;
+    /* width: max-content; */
+}
+
+.no-pokemon,
+.no-trainers {
+    /* border: 1px solid rgb(150,150,150); */
+    /* margin-left: 600px;
+    height: 100px; */
+    /* width: 100%; */
+    font-weight: normal;
+}
+
+#no-pokemon {
+    height: 100px;
+}
+
+.pokemon-list {
+    grid-column: 3 / 4;
+    /* padding: 0px;
+    margin: 0px; */
+    background-color: rgb(245, 245, 234);
+    box-shadow: 0px 0px 20px 0px  #5E855A;
+}
+
+.pokemon-list tr {
+    border: 1px solid rgb(150,150,150);
+}
+
+.users-list th {
+    border-bottom: 1px solid rgb(150,150,150);
+}
+
+.search__username {
+    height: 30px;
+}
+
+.pokemon-list img {
+    margin-top: 5px;
+    width: 150px;
+}
+
+#search-results a {
+    text-decoration: none;
+    color: #710420;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+#search-results a:hover {
+    text-decoration: blueviolet;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2pt;
+    font-style: normal;
+    color: seagreen
+}
+
+.search__pokemon {
+    height: 220px;
+}
+
+.search-table__header {
+    height: 42px;
+    font-weight: bold;
+    font-size: 14pt;
+}
