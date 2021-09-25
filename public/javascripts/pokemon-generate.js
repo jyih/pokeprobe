@@ -45,6 +45,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const pokeNameDiv = document.querySelector('.wild-pokemon-name');
     const nicknameInput = document.querySelector('.nickname-input');
+    nicknameInput.setAttribute('maxlength', 20)
 
     nicknameInput.addEventListener('keyup', (event) => {
         pokeNameDiv.innerHTML = nicknameInput.value
