@@ -77,13 +77,13 @@ footer {
     margin: 10px;
 }
 
-.search-bar-spot {
+#search-bar {
     margin: 10px;
     width: 200px;
     height: 30px;
 }
 
-.mag-icon {
+#search-button {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0px;

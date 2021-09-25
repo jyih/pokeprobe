@@ -8,7 +8,9 @@ const {
 const db = require("../db/models");
 const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
 const { check, validationResult } = require("express-validator");
-const { getRecentPokePages } = require("../queries/pokepage-queries")
+const { getRecentPokePages } = require("../queries/pokepage-queries");
+const { Sequelize } = require("../db/models");
+const { searchFusionPokemon } = require("../queries/pokemon-lookup");
 
 
 /* GET home page. */

@@ -6,6 +6,7 @@ const logger = require('morgan');
 const { sequelize } = require('./db/models');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const searchRouter = require('./routes/search')
 const indexRouter = require('./routes/index');
 const trainersRouter = require('./routes/trainers');
 const pokemonRouter = require('./routes/pokemon');
@@ -45,6 +46,7 @@ store.sync();
 
 app.use(restoreTrainer);
 app.use('/', indexRouter);
+app.use('/search', searchRouter);
 app.use('/trainers', trainersRouter);
 app.use('/fusion-pokemon', pokemonRouter);
 app.use('/pokepages', pokePagesRouter);
