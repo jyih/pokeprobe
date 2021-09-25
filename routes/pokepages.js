@@ -92,7 +92,7 @@ router.get('/delete/:id(\\d+)', asyncHandler(async (req, res) => {
     const pokemon = pokePageToDelete.FusionPokemon
     pokePageToDelete.destroy()
     pokemon.destroy()
-    res.redirect("/")
+    res.redirect("/home")
 }))
 
 module.exports = router

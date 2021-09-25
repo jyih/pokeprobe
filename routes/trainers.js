@@ -101,7 +101,7 @@ router.post(
                 password: hashedPassword,
             });
             loginTrainer(req, res, trainer);
-            res.redirect('/')
+            res.redirect('/home')
         } else {
             console.log(bio)
             res.render('trainers/trainer-signup', {
@@ -140,7 +140,7 @@ router.post('/login',
             const passwordMatch = await bcrypt.compare(password, trainer.password.toString());
             if (passwordMatch) {
                 loginTrainer(req, res, trainer)
-                res.redirect('/');
+                res.redirect('/home');
             }
         } else {
             // let errorMsg = 'Login credentials failed to match an existing user.'
@@ -159,7 +159,8 @@ router.post('/login',
 
 router.get('/logout', asyncHandler(async (req, res, next) => {
     logoutTrainer(req, res);
-    res.redirect('/trainers/login');
+    // res.redirect('/trainers/login');
+    res.redirect('/');
 }))
 
 router.post('/demo-login', asyncHandler(async (req, res, next) => {
@@ -169,7 +170,7 @@ router.post('/demo-login', asyncHandler(async (req, res, next) => {
         }
     })
     loginTrainer(req, res, demoTrainer);
-    res.redirect('/')
+    res.redirect('/home')
 }))
 
 router.get('/query-test', asyncHandler(async (req, res, next) => {
