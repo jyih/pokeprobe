@@ -28,9 +28,32 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const content = pokePage.content
-    // also get names from pokedex
+    const basemons = [
+        pokePage.FusionPokemon.Pokedex1.name,
+        pokePage.FusionPokemon.Pokedex2.name,
+    ]
+    basemon1 = basemons[0]
+    basemon2 = basemons[1]
+
+    const confirmDelete = () => {
+        if (window.confirm("Are you sure to delete?")) {
+            window.open(`/pokepages/delete/${pokePage.id}`)
+        }
+    };
+
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
-    res.render("pokepages/pokepages-id", { pokePage, imgUrl, nickname, description, content, fusionPokemonTypes })
+
+    res.render("pokepages/pokepages-id", {
+        pokePage,
+        imgUrl,
+        nickname,
+        description,
+        content,
+        fusionPokemonTypes,
+        basemon1,
+        basemon2,
+        confirmDelete,
+    })
 }))
 
 router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {

@@ -20,7 +20,6 @@ footer {
     right: 0;
     background-color: black;
     color: white;
-
     height: 20px;
     font-size: 10pt;
 } */
@@ -190,6 +189,9 @@ tr.table-header {
     background-color: rgb(247, 183, 183);
 }
 
+.hide-button {
+    display: none;
+}
 
 
 /* .button-container{

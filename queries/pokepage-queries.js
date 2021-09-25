@@ -15,9 +15,17 @@ const findAllPokePages = async () => {
 
 const findPokePage = async (pageId) => {
     const pokePage = await PokePage.findByPk(pageId, {
-        include: [
-            FusionPokemon
-        ]
+        include: {
+            model: FusionPokemon,
+            include: [{
+                model: Pokedex,
+                as: 'Pokedex1',
+            },
+            {
+                model: Pokedex,
+                as: 'Pokedex2',
+            }]
+        }
     })
     return pokePage
 }
