@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 0.25fr 2.75fr;
     grid-template-rows: auto;
-    width: 650px;
+    width: 800px;
     margin: 20px auto;
 }
 
