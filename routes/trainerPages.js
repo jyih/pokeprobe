@@ -21,9 +21,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const trainer = await findTrainer(req.params.id)
     const pokemon = await findTrainerPokemon(req.params.id)
     pageId = req.params.id
-    console.log(res.locals.trainer.id)
     let allowed = false
-    if (res.locals.trainer.id == pageId) allowed = true
+    if (res.locals.trainer && res.locals.trainer.id == pageId) allowed = true
     res.render("trainerPages/trainerPage", {trainer, pokemon, allowed})
 }))
 
