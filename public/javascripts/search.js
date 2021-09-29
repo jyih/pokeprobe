@@ -1,9 +1,10 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById('search-button').addEventListener('click', e => {
+    document.getElementById('search-form').addEventListener('submit', e => {
+        e.preventDefault()
         const searchField = document.getElementById('search-bar');
 
         if (!searchField.value) {
-            searchField.value = 'Please enter a search term.'
+            searchField.setAttribute('placeholder', 'Please enter a search term.')
 
             return
         }
