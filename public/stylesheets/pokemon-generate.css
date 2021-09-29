@@ -10,6 +10,7 @@ body{
     color: red;
     width: 125px;
 }
+
 /* 
 .gameboy-container {
     background-image: url('https://cdn.discordapp.com/attachments/844272548044472351/860182084923818004/kx84tyig6l761.png');
@@ -20,7 +21,6 @@ body{
     margin: auto;
 }
 */
-
 
 .gameboy-screen-container {
     position: relative;
@@ -35,7 +35,6 @@ body{
     margin-top: 40px;
     height: 100%;
     width: auto;
-    /* border: 1px solid black; */
 }
 
 #pokemon-random-img {

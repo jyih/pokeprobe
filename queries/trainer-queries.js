@@ -1,6 +1,5 @@
 const db = require('../db/models');
-const { Type, Pokedex, PokePage, FusionPokemon, Trainer } = db
-const { Op } = require('sequelize');
+const { FusionPokemon, Trainer } = db
 
 const findTrainer = async(pageId) => {
     const trainer = await Trainer.findByPk(pageId, {
@@ -16,18 +15,7 @@ const findAllTrainers = async() => {
     return trainers
 }
 
-const findTrainerPokemon = async(pageId) => {
-    const pokemon = await FusionPokemon.findAll({
-        where: {
-            trainerId: pageId
-        }
-    })
-
-    return pokemon
-}
-
 module.exports = {
     findTrainer,
-    findAllTrainers,
-    findTrainerPokemon
+    findAllTrainers
 }

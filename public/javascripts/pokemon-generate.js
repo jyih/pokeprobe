@@ -3,16 +3,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const releaseButton = document.getElementById('pokemon-release-button')
     const catchButton = document.getElementById('pokemon-catch-button')
 
-    /*
-      :)
-      -generate two numbers, each between 1-151
-      Math.random() * (max - min) + min;
-      -generate source URL from pokemon website containing the two numbers
-      -assign image(src=url) to our image
-      --happen upon load + release button
-
-    */
-
     const generateDexNumber = () => {
         let max = 151
         let min = 1
@@ -31,7 +21,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         fusionImg.src = fusion.fusionUrl
 
-        // console.log(fusion);
         return fusion
     }
 
@@ -45,6 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const pokeNameDiv = document.querySelector('.wild-pokemon-name');
     const nicknameInput = document.querySelector('.nickname-input');
+    nicknameInput.setAttribute('maxlength', 20)
 
     nicknameInput.addEventListener('keyup', (event) => {
         pokeNameDiv.innerHTML = nicknameInput.value
@@ -64,10 +54,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         const pokedexId1 = document.getElementById('pokedexId1')
         const pokedexId2 = document.getElementById('pokedexId2')
-        
+
         pokedexId1.value = fusionData.id1
         pokedexId2.value = fusionData.id2
     })
-
-
 })

@@ -4,14 +4,8 @@ const { Op } = require('sequelize');
 
 const findAllPokePages = async () => {
     const pokePages = await PokePage.findAll()
-    // console.log(pokePages)
     return pokePages
 }
-
-// const findPokePageById = async(pageId) => {
-//     const pokePage = await PokePage.findByPk(pageId)
-//     return pokePage
-// }
 
 const findPokePage = async (pageId) => {
     const pokePage = await PokePage.findByPk(pageId, {
@@ -92,7 +86,6 @@ const findPokemonTypes = async (pageId) => {
 module.exports = {
     findAllPokePages,
     getRecentPokePages,
-    // findPokePageById,
     findPokePage,
     findPokemonTypes
 }

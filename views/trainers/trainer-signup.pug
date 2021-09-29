@@ -18,9 +18,7 @@ block content
             +createFormField("email","email","Email", email)
             label(for="bio") Bio
             textarea(name="bio" class="bio-input")= bio
-            +createFormField("password","password","Password")
-            +createFormField("password","confirmPassword","Confirm Password")
+            +createFormField("password","password","Password", '', 'password-input')
+            label(class='error-alert' id='password-match-check')
+            +createFormField("password","confirmPassword","Confirm Password", '', 'confirm-password-input')
             button(class="signup-button") Submit
-            //- username firstname lastname email password confirmpassword
-            //- inputType,name,label,value, placeholder = label)
-            //- add trainer.formfield for persistent fields after reload
