@@ -4,13 +4,13 @@ const router = express.Router();
 const {
     csrfProtection,
     asyncHandler,
-    handleValidationErrors,
 } = require("./utils");
 
-const db = require("../db/models");
-const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
-const { check, validationResult } = require("express-validator");
-const { findAllPokePages, findPokePage, findPokemonTypes } = require("../queries/pokepage-queries")
+const {
+    findAllPokePages,
+    findPokePage,
+    findPokemonTypes
+} = require("../queries/pokepage-queries")
 
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -62,14 +62,12 @@ router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const name = pokePage.FusionPokemon.nickname
-    // const currentDescription = pokePage.FusionPokemon.description
     const currentDescription = pokePage.content
 
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
     res.render('pokepages/pokepages-edit', {
         pokePage, imgUrl, name, pokemonId,
         currentDescription,
-        // currentContent,
         csrfToken: req.csrfToken()
     })
 }))

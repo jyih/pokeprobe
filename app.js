@@ -8,11 +8,10 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const searchRouter = require('./routes/search')
 const indexRouter = require('./routes/index');
-const trainersRouter = require('./routes/trainers');
-const trainerPagesRouter = require('./routes/trainerPages')
+const authRouter = require('./routes/auth');
+const trainersRouter = require('./routes/trainers')
 const pokemonRouter = require('./routes/pokemon');
 const pokePagesRouter = require("./routes/pokepages")
-const landing = require("./routes/landing");
 const { restoreTrainer } = require('./auth')
 
 const app = express();
@@ -48,12 +47,11 @@ store.sync();
 
 app.use(restoreTrainer);
 app.use('/search', searchRouter);
-app.use('/home', indexRouter);
-app.use('/', landing);
-app.use('/trainers', trainersRouter);
+app.use('/', indexRouter);
+app.use('/trainers', authRouter);
+app.use('/trainers', trainersRouter)
 app.use('/fusion-pokemon', pokemonRouter);
 app.use('/pokepages', pokePagesRouter);
-app.use('/users', trainerPagesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -65,7 +63,6 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-    // console.log(res.locals)
     // render the error page
     res.status(err.status || 500);
     res.render('error');

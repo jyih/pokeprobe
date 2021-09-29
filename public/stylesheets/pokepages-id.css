@@ -38,8 +38,6 @@ body {
 
 .description-container {
     font-size: large;
-    /* border-radius: 20px;
-    box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white; */
 }
 
 h3, .description {
@@ -53,11 +51,6 @@ h3,.types-ul {
     font-size: large;
     font-weight: 500;
 }
-
-/* .types-ul {
-    font-size: large;
-    margin-bottom: 10px
-} */
 
 .types {
     -webkit-column-count: 4;

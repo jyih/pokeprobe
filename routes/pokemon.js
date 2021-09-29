@@ -3,11 +3,10 @@ const router = express.Router();
 const {
     csrfProtection,
     asyncHandler,
-    handleValidationErrors,
+    handleValidationErrors, //TBD: add. backend valid.
 } = require("./utils");
 const db = require("../db/models");
-const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
-const { check, validationResult } = require("express-validator");
+const { FusionPokemon, PokePage } = db;
 
 router.get('/', csrfProtection, (req, res) => {
     res.render('pokemon-generate', {
@@ -15,8 +14,9 @@ router.get('/', csrfProtection, (req, res) => {
     })
 })
 
+// To do: additional backend validation
 router.post('/', csrfProtection, asyncHandler(async(req, res) => {
-    const { nickname, pokedexId1, pokedexId2, description, fusionImgUrl } = req.body;
+    const { nickname, pokedexId1, pokedexId2, description } = req.body;
     const trainerId = req.session.auth.userId
 
     const pokemon = await FusionPokemon.create({

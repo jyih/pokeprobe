@@ -28,32 +28,3 @@ block content
           else
             div(class="please-login") You must be a registered trainer to catch Pokemon
           button(type="button" id='pokemon-release-button' class="release-button") Run Away
-
-
-
-
-
-
-
-
-
-
-
-//- this is here incase i break the form above so i can just revert back:
-
-//- block content
-//-   div(class="pokemon-generate-container")
-//-     div
-//-       img(id='pokemon-random-img' src='')
-//-     div
-//-       button(id='pokemon-release-button') Release
-//-     div
-//-       form(action='/fusion-pokemon' method='post')
-//-         input(type="hidden" name="_csrf" value=csrfToken)
-//-         input(type="hidden" name="pokedexId1" id="pokedexId1")
-//-         input(type="hidden" name="pokedexId2" id="pokedexId2")
-//-         +createFormField('text','nickname','Nickname')
-//-         label(for="description") Description
-//-         textarea(name="description")
-//-         div
-//-           button(id='pokemon-catch-button') Catch
