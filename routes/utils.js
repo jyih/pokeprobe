@@ -1,6 +1,6 @@
 const csrf = require("csurf")
 const csrfProtection = csrf({ cookie: true })
-const { check, validationResult } = require("express-validator")
+const { validationResult } = require("express-validator")
 
 
 const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next)
@@ -13,8 +13,7 @@ const handleValidationErrors = (req, res, next) => {
         const newError = Error('bad')
         newError.title = 'new error title'
         newError.errors = errors;
-        // next(newError);
-    } // can remove return and add else
+    }
     next()
 }
 
