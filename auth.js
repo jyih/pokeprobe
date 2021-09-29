@@ -1,4 +1,3 @@
-// LETS AUTHENTICASODNTOSENTOSENOTES
 const db = require("./db/models");
 const { Trainer } = db;
 
@@ -6,12 +5,11 @@ const loginTrainer = (req, res, trainer) => {
   req.session.auth = {
     userId: trainer.id
   }
-  // console.log(req.session.auth)
-}//yay
+}
 
 const logoutTrainer = (req, res) => {
   delete req.session.auth;
-}//speedy bois - lincoln
+}
 
 const requireAuth = (req, res, next) => {
   if (!res.locals.authenticated) {
@@ -21,7 +19,6 @@ const requireAuth = (req, res, next) => {
 }
 
 const restoreTrainer = async (req, res, next) => {
-  // console.log(req.session.auth)
   if (req.session.auth) {
     const { userId } = req.session.auth;
     try {
@@ -29,7 +26,6 @@ const restoreTrainer = async (req, res, next) => {
       if (trainer) {
         res.locals.authenticated = true;
         res.locals.trainer = trainer;
-        // console.log(res.locals.trainer)
         next();
       }
     } catch (err) {

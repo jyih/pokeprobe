@@ -6,10 +6,7 @@ const {
 const db = require("../db/models");
 const { Trainer } = db;
 const { Sequelize } = require("../db/models");
-const { searchFusionPokemon } = require("../queries/pokemon-lookup");
-
-
-
+const { searchFusionPokemon } = require("../queries/pokemon-queries");
 
 router.get('/:term', asyncHandler(async(req, res) => {
     const term = req.params.term;
@@ -22,7 +19,7 @@ router.get('/:term', asyncHandler(async(req, res) => {
             }
         }
     });
-    
+
     let fusionPokemon = await searchFusionPokemon(term);
 
     res.render('search-results', {trainers, fusionPokemon});

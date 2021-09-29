@@ -4,13 +4,13 @@ const router = express.Router();
 const {
     csrfProtection,
     asyncHandler,
-    handleValidationErrors,
 } = require("./utils");
 
-const db = require("../db/models");
-const { Trainer, Type, Pokedex, FusionPokemon, PokePage } = db;
-const { check, validationResult } = require("express-validator");
-const { findAllPokePages, findPokePage, findPokemonTypes } = require("../queries/pokepage-queries")
+const {
+    findAllPokePages,
+    findPokePage,
+    findPokemonTypes
+} = require("../queries/pokepage-queries")
 
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -28,9 +28,32 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const content = pokePage.content
-    // also get names from pokedex
+    const basemons = [
+        pokePage.FusionPokemon.Pokedex1.name,
+        pokePage.FusionPokemon.Pokedex2.name,
+    ]
+    basemon1 = basemons[0]
+    basemon2 = basemons[1]
+
+    const confirmDelete = () => {
+        if (window.confirm("Are you sure to delete?")) {
+            window.open(`/pokepages/delete/${pokePage.id}`)
+        }
+    };
+
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
-    res.render("pokepages/pokepages-id", { pokePage, imgUrl, nickname, description, content, fusionPokemonTypes })
+
+    res.render("pokepages/pokepages-id", {
+        pokePage,
+        imgUrl,
+        nickname,
+        description,
+        content,
+        fusionPokemonTypes,
+        basemon1,
+        basemon2,
+        confirmDelete,
+    })
 }))
 
 router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
@@ -39,14 +62,12 @@ router.get('/edit/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id1 = pokePage.FusionPokemon.pokedexId1
     const id2 = pokePage.FusionPokemon.pokedexId2
     const name = pokePage.FusionPokemon.nickname
-    // const currentDescription = pokePage.FusionPokemon.description
     const currentDescription = pokePage.content
 
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
     res.render('pokepages/pokepages-edit', {
         pokePage, imgUrl, name, pokemonId,
         currentDescription,
-        // currentContent,
         csrfToken: req.csrfToken()
     })
 }))
@@ -69,7 +90,7 @@ router.get('/delete/:id(\\d+)', asyncHandler(async (req, res) => {
     const pokemon = pokePageToDelete.FusionPokemon
     pokePageToDelete.destroy()
     pokemon.destroy()
-    res.redirect("/")
+    res.redirect("/home")
 }))
 
 module.exports = router

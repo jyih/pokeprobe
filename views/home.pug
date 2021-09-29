@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class='table-container')
+    ul
+      table(class='recent-pages')
+        thead(class='table-header')
+          tr(class='table-row table-header')
+            th(class='memes') Pokemon
+            th Trainer Name
+            th Nickname
+
+        tbody(class='table-body')
+          each recentPage in recentPages
+            tr(class='table-row')
+              td(class='table-data')
+                a(href=`/pokepages/${recentPage.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${recentPage.FusionPokemon.pokedexId1}/${recentPage.FusionPokemon.pokedexId1}.${recentPage.FusionPokemon.pokedexId2}.png`)
+              td(class='table-data'): a(href=`/trainers/${recentPage.Trainer.id}`)= recentPage.Trainer.username
+              td(class='table-data'): a(href=`/pokepages/${recentPage.id}`)= recentPage.FusionPokemon.nickname
