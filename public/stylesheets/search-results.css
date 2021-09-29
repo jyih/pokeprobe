@@ -10,24 +10,17 @@
     grid-column: 1 / 2;
     background-color: rgb(245, 245, 234);
     height: fit-content;
-    /* padding: 14px; */
     border: 1px solid rgb(150,150,150);
     box-shadow: 0px 0px 20px 0px  #5E855A;
-    /* padding-top: 10px; */
     padding-bottom: 10px;
 }
 
 .search-user__spacer {
     height: 4px;
-    /* width: max-content; */
 }
 
 .no-pokemon,
 .no-trainers {
-    /* border: 1px solid rgb(150,150,150); */
-    /* margin-left: 600px;
-    height: 100px; */
-    /* width: 100%; */
     font-weight: normal;
 }
 
@@ -37,8 +30,6 @@
 
 .pokemon-list {
     grid-column: 3 / 4;
-    /* padding: 0px;
-    margin: 0px; */
     background-color: rgb(245, 245, 234);
     box-shadow: 0px 0px 20px 0px  #5E855A;
 }

@@ -86,7 +86,6 @@ router.post(
             loginTrainer(req, res, trainer);
             res.redirect('/home')
         } else {
-            console.log(bio)
             res.render('trainers/trainer-signup', {
                 errors: req.errors,
                 csrfToken: req.csrfToken(),
