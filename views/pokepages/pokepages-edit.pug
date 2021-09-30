@@ -12,8 +12,8 @@ block content
         h1= name
     div
         form(action= `/pokepages/edit/${pokemonId}`, method='post')
-            label Update Description
+            label(class="label__update-description") Update Description
             div
                 input(type="hidden" name="_csrf" value=csrfToken)
-                textarea(name="content" cols='25' rows='7')= currentDescription
+                textarea(name="content" cols='25' rows='7' id='textarea__pokepages-edit')= currentDescription
                 button(class='submit-edit') Submit

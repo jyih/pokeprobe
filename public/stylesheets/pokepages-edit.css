@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 240px;
   margin: auto;
   margin-top: 10px;
@@ -6,7 +6,7 @@
 }
 
 h1 {
-  color: #3686C2; 
+  color: #3686C2;
   font-size: 42.69pt;
   text-align: center;
 }
@@ -14,11 +14,32 @@ h1 {
 label,
 p{
   font-size: 16pt;
+}
 
+#textarea__pokepages-edit {
+  font-family: 'Oswald', sans-serif;
+  font-size: large;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
+  border: none;
+  background-color: transparent;
+  height: 100px;
+  margin-top: 20px;
 }
 
 .submit-edit {
-  border-radius: 100%;
+  font-size: large;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px #667e8b, -6px -6px 6px white;
   height: 50px;
-  margin-top: 10px;
+  width: 100px;
+  margin-top: 20px;
+  background-color: rgb(255, 239, 98);
+  border: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+.submit-edit:hover {
+  background-color: rgb(255, 232, 23);
 }
