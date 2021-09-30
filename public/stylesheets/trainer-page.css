@@ -24,8 +24,10 @@ h2.trainer-name {
     grid-column: 2 / 3;
 }
 
-.no-pokemon {
-    font-weight: normal;
+.trainer-no-pokemon {
+    font-size: 14pt;
+    text-align: center;
+    padding: 80px 50px;
 }
 
 .trainer-bio {
