@@ -1,19 +1,25 @@
 extends ../layout
 
+append head
+    link(rel="stylesheet" href="/stylesheets/trainer-page.css")
+
 block content
-    div(class="table-container")
-        ul
+    div(class='trainer-page-container')
+        div(class='trainer-info')
+            h1(class='trainer-name')= trainer.username
+            h2(class='trainer-name')= trainer.firstName + ' ' + trainer.lastName
+            div(class='trainer-bio')= trainer.bio
+        div(class='trainer-div-spacer')
+        div(class="table-container trainer-pokemon")
             table
                 thead(class="table-header")
                     tr(class= 'table-row table-header')
-                        th= trainer.username
                         th Pokemon
                         th Nickname
 
                 tbody(class='table-body')
                     each mon in pokemon
                         tr(class="table-row")
-                            td(class="table-data")
                             td(class="table-data")
                                 a(href=`/pokepages/${mon.id}`): img(src= `https://images.alexonsager.net/pokemon/fused/${mon.pokedexId1}/${mon.pokedexId1}.${mon.pokedexId2}.png`)
                             td(class='table-data'): a(href=`/pokepages/${mon.id}`)= mon.nickname

@@ -1,0 +1,49 @@
+.trainer-page-container {
+    display: grid;
+    grid-template-columns: 1.70fr 0.30fr 2fr;
+    grid-template-rows: auto;
+    width: 850px;
+    margin: 20px auto;
+}
+
+.trainer-info {
+    grid-column: 1 / 2;
+    padding-top: 20px;
+}
+
+.trainer-name {
+    text-align: center;
+}
+
+h2.trainer-name {
+    font-size: 14pt;
+    color: #555555;
+}
+
+.trainer-div-spacer {
+    grid-column: 2 / 3;
+}
+
+.no-pokemon {
+    font-weight: normal;
+}
+
+.trainer-bio {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
+}
+
+#no-pokemon {
+    height: 100px;
+}
+
+.trainer-pokemon {
+    grid-column: 3 / 4;
+    width: 600px;
+}
+
+.trainer-pokemon .button-container {
+    padding-right: 10px;
+}
