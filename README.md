@@ -1,7 +1,7 @@
 # PokéProbe by Dugon
 
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/landing.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/landing.png' height='300px'>
 </p>
 
 PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Users can sign up to become Pokémon Trainers can catch and share their Pokemon with other Pokémon Trainers.
@@ -24,27 +24,27 @@ PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Us
 # Features
 ## User authentication
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/login.png' height='300px'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/signup.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/login.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/signup.png' height='300px'>
 </p>
 Trainers (users) can register a new account, and log into an existing account. There is also a demo login.
 
 ## PokéPages
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/catch.png' height='300px'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/pokepage.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/catch.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/pokepage.png' height='300px'>
 </p>
 Trainers can create PokéPages by catching new pokemon. PokéPages show a pokemon's parent species, elemental types, and description. The description can be edited by the trainer who owns that pokemon.
 
 ## Profile
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/profile.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/profile.png' height='300px'>
 </p>
 Trainers can visit each other's profile pages to see their full name and the bio they entered on signup.
 
 ## Search
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/search.png' height='300px'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/main/assets/readme/search.png' height='300px'>
   <br>(Featured: All users and pokemon with the letter 'P' in their name or parent species.)
 </p>
 
