@@ -9,7 +9,7 @@ const findAllPokePages = async () => {
 
 const findPokePage = async (pageId) => {
     const pokePage = await PokePage.findByPk(pageId, {
-        include: {
+        include: [{
             model: FusionPokemon,
             include: [{
                 model: Pokedex,
@@ -18,8 +18,11 @@ const findPokePage = async (pageId) => {
             {
                 model: Pokedex,
                 as: 'Pokedex2',
-            }]
-        }
+            }],
+        },
+        {
+            model: Trainer
+        }]
     })
     return pokePage
 }

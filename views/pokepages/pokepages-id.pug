@@ -21,12 +21,15 @@ block content
             p(class="basemon-container")
                 div(class='basemon-ul')='Parent Species: '
                     if basemon1 == basemon2
-                        span()=`${basemon1}`
+                        span(class='basemon')=`${basemon1}`
                     else
-                        span()=`${basemon1}, ${basemon2}`
+                        span(class='basemon')=`${basemon1}, ${basemon2}`
+
+            div(class='pokepage-trainer')=`Caught by `
+                a(href=`/trainers/${trainer.id}`)= trainer.username
 
         if content
-            div(class="description-container content-container")
+            div(class="description-container")
                 h3 Description:
                 h2(class="description")=content
 

@@ -24,21 +24,43 @@ body {
 
 .content-container {
     text-align: center;
+    margin-top: 25px;
     border-radius: 20px;
     box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
 }
 
 .nickname-container {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .nickname {
     font-size: x-large;
 }
 
+.pokepage-trainer {
+    margin-bottom: 10px;
+}
+
+.pokepage-trainer a {
+    color: #710420;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.pokepage-trainer a:hover {
+    font-style: normal;
+}
+
+.basemon {
+    color: #3686C2;
+}
+
 .description-container {
     font-size: large;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
 }
 
 h3, .description {

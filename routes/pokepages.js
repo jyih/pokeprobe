@@ -23,6 +23,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
     const fusionPokemonTypes = await findPokemonTypes(req.params.id)
 
+    const trainer = pokePage.Trainer
     const nickname = pokePage.FusionPokemon.nickname
     const description = pokePage.FusionPokemon.description
     const id1 = pokePage.FusionPokemon.pokedexId1
@@ -44,6 +45,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const imgUrl = `https://images.alexonsager.net/pokemon/fused/${id1}/${id1}.${id2}.png`
 
     res.render("pokepages/pokepages-id", {
+        trainer,
         pokePage,
         imgUrl,
         nickname,
