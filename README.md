@@ -1,6 +1,9 @@
 # PokéProbe by Dugon
 
-![PokeProbe](https://github.com/jyih/pokeprobe/blob/main/assets/images/pokeprobe-logo.png)
+<p align='center'>
+  <img src='https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/landing.png' height='300px'>
+</p>
+(https://raw.githubusercontent.com/jyih/pokeprobe/michelle-local/assets/readme/landing.png)
 
 PokéProbe by Dugon is a full-stack web application inspired by Product Hunt. Pokémon Trainers can catch and share their Pokemon with other Pokémon Trainers.
 
