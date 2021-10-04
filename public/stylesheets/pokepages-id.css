@@ -7,24 +7,32 @@ body {
     display: grid;
     width: 540px;
     grid-template-columns: 250px 250px ;
-    grid-template-rows: 250px 20px;
+    grid-template-rows: 260px 126px 1fr;
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    margin-top: 69px
+    margin-top: 69px;
+    grid-template-areas: 
+    'img     types'
+    'content desc'
+    'btns    desc';
 }
 
 .fusion-img-container {
-    width: 350px;
-    height: 350px;
-    display: grid;
+    grid-area: img;
+    align-self: flex-start;
+    height: 288px;
+    /* display: grid; */
     align-content: center;
     margin-bottom: 75px;
 }
 
 .content-container {
+    grid-area: content;
+    align-self: flex-start;
     text-align: center;
-    margin-top: 25px;
+    /* margin-top: 25px; */
+    height: 126px;
     border-radius: 20px;
     box-shadow: 6px 6px 6px #303f47, -6px -6px 6px white;
 }
@@ -39,7 +47,7 @@ body {
 }
 
 .pokepage-trainer {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .pokepage-trainer a {
@@ -57,6 +65,8 @@ body {
 }
 
 .description-container {
+    grid-area: desc;
+    align-self: flex-start;
     font-size: large;
     text-align: center;
     border-radius: 20px;
@@ -84,6 +94,12 @@ h3,.types-ul {
     width: 30px;
 }
 
+.type-container {
+    grid-area: types;
+    display: flex;
+    /* align-items: flex-start; */
+}
+
 .type {
     background-color: #ffcc03;
     border-radius: 50px;
@@ -96,9 +112,11 @@ ul img {
 }
 
 .button-container {
+    grid-area: btns;
     display: flex;
+    align-self: flex-start;
     justify-content: space-between;
-    width: 420px;
+    width: 250px;
     margin: auto;
     margin-top: 69px;
 }
