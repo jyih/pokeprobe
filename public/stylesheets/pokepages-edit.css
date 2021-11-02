@@ -26,6 +26,8 @@ p{
   background-color: transparent;
   height: 100px;
   margin-top: 20px;
+  padding: 8px;
+  resize: none;
 }
 
 .submit-edit {

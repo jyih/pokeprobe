@@ -11,7 +11,7 @@ html
 
         //- meta data for links
         <meta property='og:title' content='PokeProbe'/>
-        <meta name="image" property="og:image" content='https://i.imgur.com/5TIfhYu.png'/>
+        <meta name="image" property="og:image" content='https://i.imgur.com/8hEgvq0.png'/>
         <meta property='og:description' content='Catch pokemon and share them with your friends!'/>
         <meta property='og:url' content='https://pokeprobe.herokuapp.com'/>
 
@@ -33,6 +33,7 @@ html
             button(id="search-button"): i(class="fa fa-search")
         div(class="nav-links")
           if locals.authenticated
+            a(href=`/trainers/${locals.trainer.id}`): i(class='fa fa-user')
             a(href="/fusion-pokemon") Catch
             a(href='/trainers/logout') Logout
           else

@@ -21,16 +21,18 @@ block content
             p(class="basemon-container")
                 div(class='basemon-ul')='Parent Species: '
                     if basemon1 == basemon2
-                        span()=`${basemon1}`
+                        span(class='basemon')=`${basemon1}`
                     else
-                        span()=`${basemon1}, ${basemon2}`
+                        span(class='basemon')=`${basemon1}, ${basemon2}`
+
+            div(class='pokepage-trainer')=`Caught by `
+                a(href=`/trainers/${trainer.id}`)= trainer.username
 
         if content
-            div(class="description-container content-container")
-                h3 Description:
+            div(class="description-container")
                 h2(class="description")=content
 
-    if locals.trainer && locals.trainer.id === pokePage.trainerId
-        div(class='button-container')
-            a(href=`/pokepages/edit/${pokePage.id}` role='button' class='edit-button' id='edit-button') Edit
-            a(role='button' class='delete-button' id='delete-button') Delete
+        if locals.trainer && locals.trainer.id === pokePage.trainerId
+            div(class='button-container')
+                a(href=`/pokepages/edit/${pokePage.id}` role='button' class='edit-button' id='edit-button') Edit
+                a(role='button' class='delete-button' id='delete-button') Delete
