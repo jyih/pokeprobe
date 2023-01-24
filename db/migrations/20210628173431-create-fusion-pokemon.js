@@ -41,9 +41,9 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
-        });
+        }, options);
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('FusionPokemon');
+        return queryInterface.dropTable('FusionPokemon', options);
     }
 };

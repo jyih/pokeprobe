@@ -17,7 +17,8 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    return queryInterface.bulkInsert('Trainers', [
+    options.tableName = 'Trainers';
+    return queryInterface.bulkInsert(options, [
       {
         username: 'demoUser',
         firstName: 'de',
@@ -39,6 +40,7 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-    return queryInterface.bulkDelete('Trainers', null, {});
+    options.tableName = 'Trainers';
+    return queryInterface.bulkDelete(options, null, {});
   }
 };

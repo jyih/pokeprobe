@@ -33,9 +33,9 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
-        });
+        }, options);
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('PokePages');
+        return queryInterface.dropTable('PokePages', options);
     }
 };

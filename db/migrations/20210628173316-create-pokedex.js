@@ -34,9 +34,9 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
-        });
+        }, options);
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('Pokedex');
+        return queryInterface.dropTable('Pokedex', options);
     }
 };

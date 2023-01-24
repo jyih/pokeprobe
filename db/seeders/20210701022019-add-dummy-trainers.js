@@ -7,23 +7,18 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      */
-      return queryInterface.bulkInsert('Trainers', [
+      options.tableName = 'Trainers';
+      return queryInterface.bulkInsert(options, [
         {
-            username: 'Ash',
-            firstName: 'Ash',
-            lastName: 'Ketchum',
-            email: 'ash@catchemall.com',
-            password: 'pikachu',
-            bio: 'Pikachu was my very first pokemon!',
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
+          username: 'Ash',
+          firstName: 'Ash',
+          lastName: 'Ketchum',
+          email: 'ash@catchemall.com',
+          password: 'pikachu',
+          bio: 'Pikachu was my very first pokemon!',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
         {
             username: 'TheProf',
             firstName: 'Professor',
@@ -44,16 +39,11 @@ module.exports = {
             createdAt: new Date(),
             updatedAt: new Date(),
           }
-      ], {});
+        ], {});
   },
-
+  
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      */
-      return queryInterface.bulkDelete('Trainers', null, {});
+   options.tableName = 'Trainers';
+   return queryInterface.bulkDelete(options, null, {});
   }
 };
